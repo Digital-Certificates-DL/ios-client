@@ -13,7 +13,9 @@ class BaseTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.layer.addSublayer(configureTopBorder())
-        view.backgroundColor = .red
+        tabBar.clipsToBounds = true
+        tabBar.tintColor = .accentPrimary
+//        tabBar.frame.size.height += 150
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -24,7 +26,7 @@ class BaseTabBarController: UITabBarController {
     func configureTopBorder() -> CALayer {
         let topBorder = CALayer()
         topBorder.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: 0.5)
-        topBorder.backgroundColor = UIColor.systemGray3.cgColor
+        topBorder.backgroundColor = UIColor.borderSecondary.cgColor
         return topBorder
     }
 }

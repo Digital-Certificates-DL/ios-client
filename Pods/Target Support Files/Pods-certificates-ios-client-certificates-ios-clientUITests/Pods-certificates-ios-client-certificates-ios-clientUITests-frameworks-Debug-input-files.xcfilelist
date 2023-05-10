@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-certificates-ios-client-certificates-ios-clientUITests/Pods-certificates-ios-client-certificates-ios-clientUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework

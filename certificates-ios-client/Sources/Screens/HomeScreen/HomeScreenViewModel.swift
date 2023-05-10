@@ -10,9 +10,42 @@ import Combine
 
 
 protocol HomeScreenViewModelProvider: AnyObject {
+    var actionsPublisher: Published<[HomeScreenTableViewDataSource.Item]>.Publisher { get }
     
+    func didLoad()
+    func selectUseCameraAction()
+    func selectUploadImageAction() 
+    func dismiss()
 }
 
 class HomeScreenViewModel: HomeScreenViewModelProvider {
+    var actionsPublisher: Published<[HomeScreenTableViewDataSource.Item]>.Publisher { $actions }
+    @Published private var actions: [HomeScreenTableViewDataSource.Item] = []
+    private let pathHandler: (HomeScreenCoordinator.Path) -> Void
+    private let model: HomeScreenModelProvider
     
+    init(
+        model: HomeScreenModelProvider,
+        pathHandler: @escaping (HomeScreenCoordinator.Path) -> Void
+    ){
+        self.model = model
+        self.pathHandler = pathHandler
+    }
+    
+    func didLoad() {
+       actions = model.getAllActions()
+    }
+    
+    func selectUseCameraAction() {
+        pathHandler(.useCamera)
+    }
+    
+    func selectUploadImageAction() {
+        pathHandler(.uploadImage)
+    }
+    
+    func dismiss() {
+        // now it isn't called
+        pathHandler(.dismiss)
+    }
 }
