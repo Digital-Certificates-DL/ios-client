@@ -25,14 +25,14 @@ class HomeScreenCoordinator: Coordinator {
     
     func start() {
         let model = HomeScreenModel()
-        let viewModel = HomeScreenViewModel(model: model) { [weak self] path in
+        let viewModel = HomeScreenViewModel(model: model) { path in
             switch path {
             case .useCamera:
-                self?.startUseCameraFlow()
+                self.startUseCameraFlow()
             case .uploadImage:
-                self?.startUploadImageFlow()
+                self.startUploadImageFlow()
             case .dismiss:
-                self?.dismiss()
+                self.dismiss()
             }
         }
         let viewController = HomeScreenViewController(viewModel: viewModel)
@@ -42,7 +42,10 @@ class HomeScreenCoordinator: Coordinator {
 
 extension HomeScreenCoordinator {
     func startUseCameraFlow() {
-        // TODO
+        let coordinator = InfoScreenCoordinator(rootNavigationController: rootNavigationController)
+        currentCoordinator = coordinator
+        coordinator.previousCoordinator = self
+        coordinator.start()
     }
     
     func startUploadImageFlow() {

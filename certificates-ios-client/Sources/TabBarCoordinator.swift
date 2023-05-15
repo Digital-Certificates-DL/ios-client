@@ -47,8 +47,8 @@ extension TabBarCoordinator {
         let homeNavigationController = UINavigationController()
         homeNavigationController.tabBarItem = UITabBarItem(
             title: nil,
-            image: UIImage(systemName: "homekit"),
-            selectedImage: UIImage(systemName: "pencil")
+            image: .ic_home_active,
+            selectedImage: .ic_home_inactive
         )
         let homeCoordinator = HomeScreenCoordinator(
             rootNavigationController: homeNavigationController

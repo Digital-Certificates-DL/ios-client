@@ -24,7 +24,6 @@
 		8453A3B52A0A7EC300EDB553 /* certificates_ios_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453A3B42A0A7EC300EDB553 /* certificates_ios_clientTests.swift */; };
 		8453A3BF2A0A7EC300EDB553 /* certificates_ios_clientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453A3BE2A0A7EC300EDB553 /* certificates_ios_clientUITests.swift */; };
 		8453A3C12A0A7EC300EDB553 /* certificates_ios_clientUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453A3C02A0A7EC300EDB553 /* certificates_ios_clientUITestsLaunchTests.swift */; };
-		8453A3CE2A0A7F7400EDB553 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8453A3CD2A0A7F7400EDB553 /* Launch Screen.storyboard */; };
 		8453A3D02A0A801F00EDB553 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453A3CF2A0A801F00EDB553 /* Coordinator.swift */; };
 		8453A3D62A0A812F00EDB553 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453A3D52A0A812F00EDB553 /* AppCoordinator.swift */; };
 		8453A3D82A0A81E300EDB553 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453A3D72A0A81E300EDB553 /* HomeScreenViewModel.swift */; };
@@ -53,6 +52,20 @@
 		8453A4022A0BAC6D00EDB553 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8453A3F92A0BAC6D00EDB553 /* Inter-SemiBold.ttf */; };
 		8453A4062A0BB01F00EDB553 /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453A4052A0BB01F00EDB553 /* ConfirmButton.swift */; };
 		B8DC47FBFB57E86CFDADE7BD /* Pods_certificates_ios_client_certificates_ios_clientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF4DCAF651B7A9BA03C5046 /* Pods_certificates_ios_client_certificates_ios_clientUITests.framework */; };
+		C4C6A4992A123AC20062C7BE /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4C6A4962A123AC20062C7BE /* Roboto-Bold.ttf */; };
+		C4C6A49A2A123AC20062C7BE /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4C6A4972A123AC20062C7BE /* Roboto-Medium.ttf */; };
+		C4C6A49B2A123AC20062C7BE /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4C6A4982A123AC20062C7BE /* Roboto-Regular.ttf */; };
+		C4C6A49D2A123D2B0062C7BE /* InfoTimeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C6A49C2A123D2B0062C7BE /* InfoTimeViewCell.swift */; };
+		C4C6A49F2A1248FE0062C7BE /* InfoStatusViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C6A49E2A1248FE0062C7BE /* InfoStatusViewCell.swift */; };
+		C4C6A4A12A1287F00062C7BE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C6A4A02A1287F00062C7BE /* Launch Screen.storyboard */; };
+		C4D997642A0D0D5D002A8BFF /* InfoScreenTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D997632A0D0D5D002A8BFF /* InfoScreenTableViewDataSource.swift */; };
+		C4D997672A0D13F5002A8BFF /* InfoTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D997662A0D13F5002A8BFF /* InfoTitleTableViewCell.swift */; };
+		C4D997692A0D1648002A8BFF /* InfoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D997682A0D1648002A8BFF /* InfoScreenViewController.swift */; };
+		C4D9976B2A0D3BC2002A8BFF /* InfoScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D9976A2A0D3BC2002A8BFF /* InfoScreenViewModel.swift */; };
+		C4D9976D2A0D3CAE002A8BFF /* InfoScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D9976C2A0D3CAE002A8BFF /* InfoScreenModel.swift */; };
+		C4D9976F2A0E38BE002A8BFF /* InfoScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D9976E2A0E38BE002A8BFF /* InfoScreenCoordinator.swift */; };
+		C4D997712A0E3FC5002A8BFF /* InfoButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D997702A0E3FC5002A8BFF /* InfoButtonTableViewCell.swift */; };
+		C4D997792A0E54C5002A8BFF /* EOSIO in Frameworks */ = {isa = PBXBuildFile; productRef = C4D997782A0E54C5002A8BFF /* EOSIO */; };
 		F0B03FC7D035A0A0817F5B30 /* Pods_certificates_ios_clientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F49AB163E01D7E98EAC25BB /* Pods_certificates_ios_clientTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +108,6 @@
 		8453A3BA2A0A7EC300EDB553 /* certificates-ios-clientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "certificates-ios-clientUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8453A3BE2A0A7EC300EDB553 /* certificates_ios_clientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = certificates_ios_clientUITests.swift; sourceTree = "<group>"; };
 		8453A3C02A0A7EC300EDB553 /* certificates_ios_clientUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = certificates_ios_clientUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8453A3CD2A0A7F7400EDB553 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8453A3CF2A0A801F00EDB553 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8453A3D52A0A812F00EDB553 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8453A3D72A0A81E300EDB553 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
@@ -115,6 +127,19 @@
 		8453A4052A0BB01F00EDB553 /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
 		9F7C158A9F28873B9DA401ED /* Pods-certificates-ios-client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates-ios-client.debug.xcconfig"; path = "Target Support Files/Pods-certificates-ios-client/Pods-certificates-ios-client.debug.xcconfig"; sourceTree = "<group>"; };
 		B1071B7D91446000CE226108 /* Pods-certificates-ios-client-certificates-ios-clientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates-ios-client-certificates-ios-clientUITests.debug.xcconfig"; path = "Target Support Files/Pods-certificates-ios-client-certificates-ios-clientUITests/Pods-certificates-ios-client-certificates-ios-clientUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4C6A4962A123AC20062C7BE /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		C4C6A4972A123AC20062C7BE /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		C4C6A4982A123AC20062C7BE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		C4C6A49C2A123D2B0062C7BE /* InfoTimeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTimeViewCell.swift; sourceTree = "<group>"; };
+		C4C6A49E2A1248FE0062C7BE /* InfoStatusViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoStatusViewCell.swift; sourceTree = "<group>"; };
+		C4C6A4A02A1287F00062C7BE /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C4D997632A0D0D5D002A8BFF /* InfoScreenTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenTableViewDataSource.swift; sourceTree = "<group>"; };
+		C4D997662A0D13F5002A8BFF /* InfoTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTitleTableViewCell.swift; sourceTree = "<group>"; };
+		C4D997682A0D1648002A8BFF /* InfoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenViewController.swift; sourceTree = "<group>"; };
+		C4D9976A2A0D3BC2002A8BFF /* InfoScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenViewModel.swift; sourceTree = "<group>"; };
+		C4D9976C2A0D3CAE002A8BFF /* InfoScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenModel.swift; sourceTree = "<group>"; };
+		C4D9976E2A0E38BE002A8BFF /* InfoScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenCoordinator.swift; sourceTree = "<group>"; };
+		C4D997702A0E3FC5002A8BFF /* InfoButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButtonTableViewCell.swift; sourceTree = "<group>"; };
 		DD060096EDCE352AA37F8A45 /* Pods-certificates-ios-client-certificates-ios-clientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates-ios-client-certificates-ios-clientUITests.release.xcconfig"; path = "Target Support Files/Pods-certificates-ios-client-certificates-ios-clientUITests/Pods-certificates-ios-client-certificates-ios-clientUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FF5CF481B3EA082043775E91 /* Pods-certificates-ios-client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates-ios-client.release.xcconfig"; path = "Target Support Files/Pods-certificates-ios-client/Pods-certificates-ios-client.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4D997792A0E54C5002A8BFF /* EOSIO in Frameworks */,
 				2FBCA668EDA322BA63D76649 /* Pods_certificates_ios_client.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,9 +265,9 @@
 				8453A4042A0BAEEC00EDB553 /* Views */,
 				8453A3EC2A0BA2B400EDB553 /* Fonts */,
 				8453A3E62A0B9F8D00EDB553 /* Colors */,
-				8453A3CD2A0A7F7400EDB553 /* Launch Screen.storyboard */,
 				8453A3AB2A0A7EC300EDB553 /* Info.plist */,
 				8453A3A62A0A7EC300EDB553 /* Assets.xcassets */,
+				C4C6A4A02A1287F00062C7BE /* Launch Screen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -259,6 +285,7 @@
 		8453A3D32A0A80E300EDB553 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C4D997612A0D0A03002A8BFF /* InfoScreen */,
 				8453A3D42A0A810800EDB553 /* HomeScreen */,
 			);
 			path = Screens;
@@ -335,6 +362,9 @@
 			isa = PBXGroup;
 			children = (
 				8453A3F82A0BAC6D00EDB553 /* Inter-Medium.ttf */,
+				C4C6A4962A123AC20062C7BE /* Roboto-Bold.ttf */,
+				C4C6A4972A123AC20062C7BE /* Roboto-Medium.ttf */,
+				C4C6A4982A123AC20062C7BE /* Roboto-Regular.ttf */,
 				8453A3F72A0BAC6C00EDB553 /* Inter-Regular.ttf */,
 				8453A3F92A0BAC6D00EDB553 /* Inter-SemiBold.ttf */,
 				8453A3F32A0BAAAC00EDB553 /* NTSomic-Regular.ttf */,
@@ -364,6 +394,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C4D997612A0D0A03002A8BFF /* InfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C4D9976E2A0E38BE002A8BFF /* InfoScreenCoordinator.swift */,
+				C4D9976C2A0D3CAE002A8BFF /* InfoScreenModel.swift */,
+				C4D997682A0D1648002A8BFF /* InfoScreenViewController.swift */,
+				C4D9976A2A0D3BC2002A8BFF /* InfoScreenViewModel.swift */,
+				C4D997622A0D0D3A002A8BFF /* TableView */,
+			);
+			path = InfoScreen;
+			sourceTree = "<group>";
+		};
+		C4D997622A0D0D3A002A8BFF /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				C4D997632A0D0D5D002A8BFF /* InfoScreenTableViewDataSource.swift */,
+				C4D997662A0D13F5002A8BFF /* InfoTitleTableViewCell.swift */,
+				C4D997702A0E3FC5002A8BFF /* InfoButtonTableViewCell.swift */,
+				C4C6A49C2A123D2B0062C7BE /* InfoTimeViewCell.swift */,
+				C4C6A49E2A1248FE0062C7BE /* InfoStatusViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -382,6 +436,9 @@
 			dependencies = (
 			);
 			name = "certificates-ios-client";
+			packageProductDependencies = (
+				C4D997782A0E54C5002A8BFF /* EOSIO */,
+			);
 			productName = "certificates-ios-client";
 			productReference = 8453A39A2A0A7EC100EDB553 /* certificates-ios-client.app */;
 			productType = "com.apple.product-type.application";
@@ -457,6 +514,9 @@
 				Base,
 			);
 			mainGroup = 8453A3912A0A7EC100EDB553;
+			packageReferences = (
+				C4D997772A0E54C5002A8BFF /* XCRemoteSwiftPackageReference "swift-eosio" */,
+			);
 			productRefGroup = 8453A39B2A0A7EC100EDB553 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -473,11 +533,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8453A3CE2A0A7F7400EDB553 /* Launch Screen.storyboard in Resources */,
+				C4C6A49A2A123AC20062C7BE /* Roboto-Medium.ttf in Resources */,
+				C4C6A49B2A123AC20062C7BE /* Roboto-Regular.ttf in Resources */,
 				8453A3FA2A0BAC6D00EDB553 /* Inter-Regular.ttf in Resources */,
 				8453A3FD2A0BAC6D00EDB553 /* Inter-Medium.ttf in Resources */,
 				8402E5E22A0BC44C00EA17A3 /* Ginóra-Sans-Bold.otf in Resources */,
 				8453A3A72A0A7EC300EDB553 /* Assets.xcassets in Resources */,
+				C4C6A4A12A1287F00062C7BE /* Launch Screen.storyboard in Resources */,
+				C4C6A4992A123AC20062C7BE /* Roboto-Bold.ttf in Resources */,
 				8453A3F02A0BAA9D00EDB553 /* NTSomic-Medium.ttf in Resources */,
 				8453A3F42A0BAAAC00EDB553 /* NTSomic-Regular.ttf in Resources */,
 				8453A4002A0BAC6D00EDB553 /* Inter-SemiBold.ttf in Resources */,
@@ -622,23 +685,32 @@
 			files = (
 				8453A3EE2A0BA2C900EDB553 /* ApplicationFonts.swift in Sources */,
 				8453A3E82A0B9FA600EDB553 /* ApplicationColors.swift in Sources */,
+				C4C6A49D2A123D2B0062C7BE /* InfoTimeViewCell.swift in Sources */,
 				8453A3D02A0A801F00EDB553 /* Coordinator.swift in Sources */,
 				8453A3D82A0A81E300EDB553 /* HomeScreenViewModel.swift in Sources */,
 				8453A3A22A0A7EC100EDB553 /* HomeScreenViewController.swift in Sources */,
 				8453A3DC2A0A81FA00EDB553 /* HomeScreenCoordinator.swift in Sources */,
 				8402E5E72A0BD11700EA17A3 /* HomeScreenTableViewDataSource.swift in Sources */,
+				C4D997712A0E3FC5002A8BFF /* InfoButtonTableViewCell.swift in Sources */,
 				8453A3DA2A0A81EE00EDB553 /* HomeScreenModel.swift in Sources */,
+				C4C6A49F2A1248FE0062C7BE /* InfoStatusViewCell.swift in Sources */,
+				C4D9976B2A0D3BC2002A8BFF /* InfoScreenViewModel.swift in Sources */,
+				C4D997672A0D13F5002A8BFF /* InfoTitleTableViewCell.swift in Sources */,
 				8402E5EE2A0BD67900EA17A3 /* UITableViewCell + Identifier.swift in Sources */,
 				8453A3DF2A0A84CB00EDB553 /* ServiceManager.swift in Sources */,
 				8453A4062A0BB01F00EDB553 /* ConfirmButton.swift in Sources */,
 				8402E5F12A0BE0D900EA17A3 /* Images.swift in Sources */,
+				C4D997642A0D0D5D002A8BFF /* InfoScreenTableViewDataSource.swift in Sources */,
 				8453A3EB2A0BA0BA00EDB553 /* UIColor+hexString.swift in Sources */,
 				8453A3E32A0A878200EDB553 /* BaseTabBarController.swift in Sources */,
 				8453A3D62A0A812F00EDB553 /* AppCoordinator.swift in Sources */,
 				8402E5EC2A0BD61E00EA17A3 /* ActionTableViewCell.swift in Sources */,
+				C4D997692A0D1648002A8BFF /* InfoScreenViewController.swift in Sources */,
 				8453A39E2A0A7EC100EDB553 /* AppDelegate.swift in Sources */,
+				C4D9976D2A0D3CAE002A8BFF /* InfoScreenModel.swift in Sources */,
 				8453A3E12A0A869700EDB553 /* TabBarCoordinator.swift in Sources */,
 				8453A3A02A0A7EC100EDB553 /* SceneDelegate.swift in Sources */,
+				C4D9976F2A0E38BE002A8BFF /* InfoScreenCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +799,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -781,6 +854,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -804,7 +878,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "certificates-ios-client/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -833,7 +907,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "certificates-ios-client/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -969,6 +1043,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C4D997772A0E54C5002A8BFF /* XCRemoteSwiftPackageReference "swift-eosio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/greymass/swift-eosio.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C4D997782A0E54C5002A8BFF /* EOSIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4D997772A0E54C5002A8BFF /* XCRemoteSwiftPackageReference "swift-eosio" */;
+			productName = EOSIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8453A3922A0A7EC100EDB553 /* Project object */;
 }

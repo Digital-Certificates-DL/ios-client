@@ -5,4 +5,47 @@
 //  Created by Apik on 11.05.2023.
 //
 
-import Foundation
+import UIKit
+
+protocol InfoScreenModelProvider: AnyObject {
+    func getAllTitles() -> [InfoScreenTableViewDataSource.Item]
+    func getAllButtons() -> [InfoScreenTableViewDataSource.Item]
+    func getAllTimes() -> [InfoScreenTableViewDataSource.Item]
+    func getAllInfoItems() -> [InfoScreenTableViewDataSource.Item]
+}
+
+class InfoScreenModel: InfoScreenModelProvider{
+    private typealias Title = InfoScreenTableViewDataSource.Item
+    private typealias Button = InfoScreenTableViewDataSource.Item
+    private typealias Time = InfoScreenTableViewDataSource.Item
+    private typealias Status = InfoScreenTableViewDataSource.Item
+    
+    func getAllTitles() -> [InfoScreenTableViewDataSource.Item] {
+        let message: Title = Title.itemTitle(title: "message", content: "example")
+        let address: Title = Title.itemTitle(title: "address", content: "Boolawdawdawdawdwwwe3r3")
+        let signature: Title = Title.itemTitle(title: "signature", content: "adwadawdadawdawd wda wdaw;ldmaw")
+        let certificatePage: Title = Title.itemTitle(title: "certificate Page", content: "Link")
+        
+        return [message, address, signature, certificatePage]
+    }
+    
+    func getAllButtons() -> [InfoScreenTableViewDataSource.Item] {
+        let copyButton: Button = Button.itemButton(title: "Copy", icon: .ic_copy)
+        let shareButton: Button = Button.itemButton(title: "Share", icon: .ic_share)
+        
+        return [copyButton, shareButton]
+    }
+    
+    func getAllInfoItems() -> [InfoScreenTableViewDataSource.Item] {
+        return getStatus() + getAllTitles() + getAllTimes() + getAllButtons()
+    }
+    
+    
+    func getAllTimes() -> [InfoScreenTableViewDataSource.Item] {
+        return [Time.itemTime(time: "15.09.2023")]
+    }
+    
+    func getStatus() -> [InfoScreenTableViewDataSource.Item] {
+        return [Status.itemStatus(isConfirmed: true)]
+    }
+}

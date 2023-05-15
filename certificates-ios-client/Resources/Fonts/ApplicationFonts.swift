@@ -19,4 +19,6 @@ extension UIFont {
     static var p14InterRegular = UIFont(name: "Inter-Regular", size: 14)
     static var p12InterRegular = UIFont(name: "Inter-Regular", size: 12)
     static var ginoraBold = UIFont(name: "GinoraSans-Bold", size: 24)
+    static var robotoRegular = UIFont(name: "Roboto-Regular", size: 18)
+    static var robotoBold = UIFont(name: "Roboto-Bold", size: 18)
 }
