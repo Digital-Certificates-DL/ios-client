@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "secp256k1",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/greymass/secp256k1.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f5babfbb95166ac3bca64b09adefc0dcda0b5c52"
+      }
+    },
+    {
+      "identity" : "swift-eosio",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/greymass/swift-eosio.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "a9e5559e91a206fa38f303638107e785d7361be1"
+      }
+    },
+    {
+      "identity" : "swift-query-string-coder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jnordberg/swift-query-string-coder.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "874a4e31d7c77f3fec56f893229f416e7604da4d"
+      }
+    }
+  ],
+  "version" : 2
+}

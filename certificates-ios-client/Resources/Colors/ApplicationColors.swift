@@ -31,4 +31,6 @@ extension UIColor {
     
     // Background
     static var cellBackground: UIColor = UIColor("#F8F8F8")
+    static var succesPrimary: UIColor = UIColor("#E5FFF8")
+    static var errorPrimary: UIColor = UIColor("#FFDFDF")
 }
