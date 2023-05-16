@@ -10,4 +10,5 @@ import UIKit
 extension UIImage {
     static let camera: UIImage = UIImage(named: "camera")!
     static let gallery: UIImage = UIImage(named: "gallery")!
+    static let qrScanner: UIImage = UIImage(named: "QrScanner")!
 }

@@ -31,4 +31,5 @@ extension UIColor {
     
     // Background
     static var cellBackground: UIColor = UIColor("#F8F8F8")
+    static var lightRed: UIColor = UIColor("#FFEEEE")
 }

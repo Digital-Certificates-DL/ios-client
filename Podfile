@@ -9,6 +9,7 @@ target 'certificates-ios-client' do
   pod 'Alamofire'
   pod 'KeychainSwift', '~> 20.0'
   pod 'UIColor_Hex_Swift', '~> 5.1.9'
+  pod 'lottie-ios'
 
   target 'certificates-ios-clientTests' do
     inherit! :search_paths

@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Combine
+import secp256k1
 
 class HomeScreenViewController: UIViewController {
     private typealias DataSource = HomeScreenTableViewDataSource
@@ -44,7 +45,9 @@ class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bind()
+        
         viewModel.didLoad()
+        
     }
     
     init(viewModel: HomeScreenViewModelProvider) {
