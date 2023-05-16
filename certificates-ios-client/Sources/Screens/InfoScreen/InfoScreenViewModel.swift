@@ -33,11 +33,11 @@ class InfoScreenViewModel: InfoScreenViewModelProvider {
     }
     
     func copyData() {
-        print("copy")
+        UIPasteboard.general.string = "message: 0000"
     }
     
     func shereData() {
-        print("shere")
+
     }
     
     func didLoad() {

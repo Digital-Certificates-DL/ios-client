@@ -37,10 +37,10 @@ class InfoScreenViewController: UIViewController {
             cellFinal = cell
             break
             
-        
+            
         case .itemTime(time: let time):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InfoTimeViewCell.identifier, for: indexPath) as?
-            InfoTimeViewCell else {
+                    InfoTimeViewCell else {
                 return nil
             }
             cell.configure(time: time)
@@ -139,9 +139,11 @@ extension InfoScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 6 && indexPath.section == 0 {
             viewModel.copyData()
+            ToastManager.show(message: "Coppied to clickBoard", controller: self)
         }
         if indexPath.row == 7 && indexPath.section == 0 {
-            viewModel.shereData()
+            let text = "This is some text that I want to share."
+            ShereManager.shereText(text: text, vc: self)
         }
     }
 }

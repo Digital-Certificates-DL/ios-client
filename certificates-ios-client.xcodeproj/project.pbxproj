@@ -52,6 +52,8 @@
 		8453A4022A0BAC6D00EDB553 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8453A3F92A0BAC6D00EDB553 /* Inter-SemiBold.ttf */; };
 		8453A4062A0BB01F00EDB553 /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453A4052A0BB01F00EDB553 /* ConfirmButton.swift */; };
 		B8DC47FBFB57E86CFDADE7BD /* Pods_certificates_ios_client_certificates_ios_clientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF4DCAF651B7A9BA03C5046 /* Pods_certificates_ios_client_certificates_ios_clientUITests.framework */; };
+		C4A3A1E12A1380C100DFC12A /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1E02A1380C100DFC12A /* ToastManager.swift */; };
+		C4A3A1E32A13815900DFC12A /* ShereManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1E22A13815900DFC12A /* ShereManager.swift */; };
 		C4C6A4992A123AC20062C7BE /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4C6A4962A123AC20062C7BE /* Roboto-Bold.ttf */; };
 		C4C6A49A2A123AC20062C7BE /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4C6A4972A123AC20062C7BE /* Roboto-Medium.ttf */; };
 		C4C6A49B2A123AC20062C7BE /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4C6A4982A123AC20062C7BE /* Roboto-Regular.ttf */; };
@@ -127,6 +129,8 @@
 		8453A4052A0BB01F00EDB553 /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
 		9F7C158A9F28873B9DA401ED /* Pods-certificates-ios-client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates-ios-client.debug.xcconfig"; path = "Target Support Files/Pods-certificates-ios-client/Pods-certificates-ios-client.debug.xcconfig"; sourceTree = "<group>"; };
 		B1071B7D91446000CE226108 /* Pods-certificates-ios-client-certificates-ios-clientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates-ios-client-certificates-ios-clientUITests.debug.xcconfig"; path = "Target Support Files/Pods-certificates-ios-client-certificates-ios-clientUITests/Pods-certificates-ios-client-certificates-ios-clientUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4A3A1E02A1380C100DFC12A /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
+		C4A3A1E22A13815900DFC12A /* ShereManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShereManager.swift; sourceTree = "<group>"; };
 		C4C6A4962A123AC20062C7BE /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		C4C6A4972A123AC20062C7BE /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		C4C6A4982A123AC20062C7BE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 		8453A3E42A0A967B00EDB553 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C4A3A1DF2A1380A600DFC12A /* Utils */,
 				8453A3E92A0BA0AD00EDB553 /* Extensions */,
 				8453A3E52A0A969700EDB553 /* Models */,
 				8453A3E02A0A869700EDB553 /* TabBarCoordinator.swift */,
@@ -392,6 +397,15 @@
 				0366EE97F1926E8A6B6DD9C4 /* Pods-certificates-ios-clientTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C4A3A1DF2A1380A600DFC12A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C4A3A1E02A1380C100DFC12A /* ToastManager.swift */,
+				C4A3A1E22A13815900DFC12A /* ShereManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		C4D997612A0D0A03002A8BFF /* InfoScreen */ = {
@@ -693,6 +707,7 @@
 				8402E5E72A0BD11700EA17A3 /* HomeScreenTableViewDataSource.swift in Sources */,
 				C4D997712A0E3FC5002A8BFF /* InfoButtonTableViewCell.swift in Sources */,
 				8453A3DA2A0A81EE00EDB553 /* HomeScreenModel.swift in Sources */,
+				C4A3A1E32A13815900DFC12A /* ShereManager.swift in Sources */,
 				C4C6A49F2A1248FE0062C7BE /* InfoStatusViewCell.swift in Sources */,
 				C4D9976B2A0D3BC2002A8BFF /* InfoScreenViewModel.swift in Sources */,
 				C4D997672A0D13F5002A8BFF /* InfoTitleTableViewCell.swift in Sources */,
@@ -704,6 +719,7 @@
 				8453A3EB2A0BA0BA00EDB553 /* UIColor+hexString.swift in Sources */,
 				8453A3E32A0A878200EDB553 /* BaseTabBarController.swift in Sources */,
 				8453A3D62A0A812F00EDB553 /* AppCoordinator.swift in Sources */,
+				C4A3A1E12A1380C100DFC12A /* ToastManager.swift in Sources */,
 				8402E5EC2A0BD61E00EA17A3 /* ActionTableViewCell.swift in Sources */,
 				C4D997692A0D1648002A8BFF /* InfoScreenViewController.swift in Sources */,
 				8453A39E2A0A7EC100EDB553 /* AppDelegate.swift in Sources */,
