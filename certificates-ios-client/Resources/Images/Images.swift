@@ -17,4 +17,5 @@ extension UIImage {
     static let ic_back: UIImage = UIImage(named: "back_button")!
     static let ic_home_active: UIImage = UIImage(named: "ic_home_active")!
     static let ic_home_inactive: UIImage = UIImage(named: "ic_home_inactive")!
+    static let qrScanner: UIImage = UIImage(named: "QrScanner")!
 }

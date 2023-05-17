@@ -11,6 +11,11 @@ protocol ServiceManagerProvider: AnyObject {
     
 }
 
-class ServiceManager {
+class ServiceManager: ServiceManagerProvider {
+    static let shared: ServiceManagerProvider = ServiceManager()
+    
+    init() {
+        
+    }
     
 }

@@ -42,9 +42,9 @@ class HomeScreenCoordinator: Coordinator {
 
 extension HomeScreenCoordinator {
     func startUseCameraFlow() {
-        let coordinator = InfoScreenCoordinator(rootNavigationController: rootNavigationController)
-        currentCoordinator = coordinator
+        let coordinator = QrScreenCoordinator(rootNavigationController: rootNavigationController)
         coordinator.previousCoordinator = self
+        currentCoordinator = coordinator
         coordinator.start()
     }
     

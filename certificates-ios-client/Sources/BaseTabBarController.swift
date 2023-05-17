@@ -15,6 +15,7 @@ class BaseTabBarController: UITabBarController {
         tabBar.layer.addSublayer(configureTopBorder())
         tabBar.clipsToBounds = true
         tabBar.tintColor = .accentPrimary
+        tabBar.backgroundColor = .white
 //        tabBar.frame.size.height += 150
     }
     

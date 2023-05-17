@@ -54,7 +54,9 @@ class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bind()
+        
         viewModel.didLoad()
+        
     }
     
     deinit {
