@@ -90,5 +90,5 @@ fastlane/test_output
 *.DS_Store
 
 iOSInjectionProject/
-Q.xcworkspace/xcuserdata
+certificates-ios-client.xcworkspace/xcuserdata
 Pods
