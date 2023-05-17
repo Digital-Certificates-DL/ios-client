@@ -1,5 +1,0 @@
-#import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_certificates_ios_client_certificates_ios_clientUITests : NSObject
-@end
-@implementation PodsDummy_Pods_certificates_ios_client_certificates_ios_clientUITests
-@end
