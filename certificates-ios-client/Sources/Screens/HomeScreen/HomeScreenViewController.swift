@@ -130,6 +130,7 @@ extension HomeScreenViewController: UITableViewDelegate {
         }
         if indexPath.row == 1 && indexPath.section == 0 {
             viewModel.selectUploadImageAction()
+            
         }
     }
 }
