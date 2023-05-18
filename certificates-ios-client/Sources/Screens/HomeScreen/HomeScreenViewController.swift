@@ -123,14 +123,34 @@ class HomeScreenViewController: UIViewController {
     }
 }
 
-extension HomeScreenViewController: UITableViewDelegate {
+extension HomeScreenViewController: UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 && indexPath.section == 0 {
             viewModel.selectUseCameraAction()
         }
         if indexPath.row == 1 && indexPath.section == 0 {
             viewModel.selectUploadImageAction()
-            
+            setPicture()
+
         }
     }
+    
+     func setPicture() {
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+                imagePicker.delegate = self
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.allowsEditing = false
+
+                present(imagePicker, animated: true, completion: nil)
+            }
+        }
+
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            picker.dismiss(animated: true, completion: nil)
+            
+            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                print(image.size.width)
+            }
+            
+        }
 }
