@@ -143,6 +143,9 @@ extension QrScreenViewController: AVCaptureMetadataOutputObjectsDelegate {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
+    
+    
+
 }
 
 

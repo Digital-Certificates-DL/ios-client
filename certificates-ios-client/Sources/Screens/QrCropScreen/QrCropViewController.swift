@@ -6,47 +6,74 @@
 //
 
 import UIKit
+import Mantis
 
-class QrCropViewController: UIViewController {
-    private lazy var selectedImage: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
-    }()
+class QrCropViewController: CropViewController {
     
-    private lazy var cropButton: UIButton = {
-        let button = UIButton()
-        return button
-    }()
-    
-    private let viewModel: QrCropViewModelProvider
-    
-    
-    init(viewModel: QrCropViewModelProvider) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+    var viewModel: QrCropViewModelProvider? = nil
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupAutoLayout()
+       
+        title = nil
+        delegate = self
+    }
+
+    @objc private func onRotateClicked() {
+        didSelectClockwiseRotate()
+    }
+
+    @objc private func onDoneClicked() {
+        crop()
     }
     
-    func setupAutoLayout() {
-        view.addSubview(selectedImage)
-        
-//        scannerView.snp.makeConstraints { make in
-//            make.size.equalTo(116.0)
-//            make.center.equalToSuperview()
-//        }
-//        
-//        scaleSlider.snp.makeConstraints { make in
-//            make.bottom.equalToSuperview().offset(-150.0)
-//            make.leading.trailing.equalToSuperview().inset(30.0)
-//        }
+    
+    public static func getConfig() -> Config{
+        var config = Mantis.Config()
+        config.presetFixedRatioType = .alwaysUsingOnePresetFixedRatio(ratio: 1.0)
+        config.cropViewConfig.showRotationDial = false
+        return config
     }
+    
+    
+    private func parseQr(from image: UIImage) -> String? {
+        var qrAsString = ""
+        guard let detector = CIDetector(ofType: CIDetectorTypeQRCode,
+                                        context: nil,
+                                        options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]),
+              let ciImage = CIImage(image: image),
+              let features = detector.features(in: ciImage) as? [CIQRCodeFeature] else {
+            return nil
+        }
+        
+        for feature in features {
+            guard let indeedMessageString = feature.messageString else {
+                continue
+            }
+            qrAsString += indeedMessageString
+        }
+        
+        return qrAsString
+    }
+    
+}
+
+
+extension QrCropViewController : CropViewControllerDelegate{
+    func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation, cropInfo: CropInfo) {
+        let rawData = parseQr(from: cropped)
+        if(rawData == nil) {
+        }else {
+            viewModel!.parseQr(rawData!)
+        }
+        
+    }
+    
+    func cropViewControllerDidCancel(_ cropViewController: CropViewController, original: UIImage) {
+        cropViewController.dismiss(animated: true, completion: nil)
+        viewModel!.dismiss()
+    }
+    
+    
 }
