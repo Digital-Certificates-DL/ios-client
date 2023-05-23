@@ -8,6 +8,7 @@
 import Foundation
 import secp256k1
 import secp256k1_swift
+import CryptoKit
 
 
 class Secp256k1Manager {
@@ -136,7 +137,41 @@ class Secp256k1Manager {
 //        print(base64pk)
 //        secp256k1_context_destroy(context)
     }
+    
+    func test2() {
+        let recoverySignatureBase64String = "G1EB37Vx8llI+7T0ZFhXN3h6QE30ah39DSECDfKbLgc0NCedqwHirLlvnTVKYLD1jl4BIbyMXQ0jBGmWuWHFvM8="
+        let recoverySignatureHex = "1b5101dfb571f25948fbb4f464585737787a404df46a1dfd0d21020df29b2e073434279dab01e2acb96f9d354a60b0f58e5e0121bc8c5d0d23046996b961c5bccf"
+        let message = "03.04.2023 Daria Hudemchuk Beginner at theoretical aspects blockchain technology"
+        let msgHash = SHA256.hash(data: "For this sample, this 63-byte string will be used as input data".data(using: .utf8)!)
+        
+        print("bytes:",  String(bytes: msgHash.bytes))
+        let messageData = message.data(using: .utf8)!
+        let recoverySignatureBase64Data = Data(base64Encoded: recoverySignatureBase64String)!
+        let recoverySignatureBase64Bytes = try! recoverySignatureHex.bytes
+        let recoverySignature = try! secp256k1.Recovery.ECDSASignature(dataRepresentation: recoverySignatureBase64Bytes)
+        let pk = try! secp256k1.Recovery.PublicKey(messageData, signature: recoverySignature)
+    }
+    
+    func testPublicKeyRecovery() {
+        let expectedRecoverySignature = "rPnhleCU8vQOthm5h4gX/5UbmxH6w3zw1ykAmLvvtXT4YGKBoiMaP8eBBF8upN8IaTYmO7+o0Vyhf+cODD1uVgE="
+        let expectedPrivateKey = "5f6d5afecc677d66fb3d41eee7a8ad8195659ceff588edaf416a9a17daf38fdd"
+        let privateKeyBytes = try! expectedPrivateKey.bytes
+        let privateKey = try! secp256k1.Recovery.PrivateKey(dataRepresentation: privateKeyBytes)
+        let messageData = "We're all Satoshi Nakamoto and a bit of Harold Thomas Finney II.".data(using: .utf8)!
+
+        let recoverySignature = try! privateKey.signature(for: messageData)
+
+        // Verify the recovery signature matches the expected output
+//        XCTAssertEqual(expectedRecoverySignature, recoverySignature.dataRepresentation.base64EncodedString())
+
+        let publicKey = try! secp256k1.Recovery.PublicKey(messageData, signature: recoverySignature)
+
+        // Verify the recovered public key matches the expected public key
+//        XCTAssertEqual(publicKey.dataRepresentation, privateKey.publicKey.dataRepresentation)
+    }
 }
+
+
 
 //public static ECKey signedMessageToKey(String message, String signatureBase64) throws SignatureException {
 //    byte[] signatureEncoded;

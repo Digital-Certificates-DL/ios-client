@@ -114,7 +114,7 @@ class HomeScreenViewController: UIViewController {
 //            format: .compressed
 //        )
         
-        Secp256k1Manager().test()
+        Secp256k1Manager().test2()
 
 //        print(publicKeySigning.isValidSignature(try! signature.normalize, for: messageData))
         
