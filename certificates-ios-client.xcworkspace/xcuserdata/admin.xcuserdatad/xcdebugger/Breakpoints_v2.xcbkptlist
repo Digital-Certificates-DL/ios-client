@@ -7,336 +7,224 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5B5E1D6B-9CAD-4BD6-B408-B90817CA3667"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "dataSource"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E9DFB59E-E1FD-4EAC-A365-6F90795339EF"
+            uuid = "B58CD287-DCBA-4C1F-9241-9509D98FF6ED"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewModel.swift"
+            filePath = "certificates-ios-client/Managers/API/TransactionsAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "didLoad()"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "getTransactionById(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "72CEC17C-1279-4CFC-B606-73559A7815F6"
+            uuid = "57292412-45BE-4BDB-8D54-451D49B7B97D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "HomeScreenViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "72CEC17C-1279-4CFC-B606-73559A7815F6 - f7dc1af6070bb0ce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "certificates_ios_client.HomeScreenViewController.bind() -&gt; ()"
-                  moduleName = "certificates-ios-client"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/certificates-ios-client/certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  uuid = "72CEC17C-1279-4CFC-B606-73559A7815F6 - e0b53a2d8cff8a02"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;certificates_ios_client.HomeScreenTableViewDataSource.Item&gt;) -&gt; () in certificates_ios_client.HomeScreenViewController.bind() -&gt; ()"
-                  moduleName = "certificates-ios-client"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/certificates-ios-client/certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9D007B0A-0880-42D8-A952-E3A79B14C481"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "HomeScreenViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A1A69F49-49EE-4FDF-8291-D1AF0A2E65E0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "HomeScreenViewModel"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C8A0B208-F02E-417B-B342-D1652D6C14A6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "didLoad()"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "setupSubviews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AA208531-B5F0-48B6-88CC-FD5148091466"
+            uuid = "1FAF9698-75D5-4CD0-96C9-D2D2FEC9174C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "dataSource"
-            landmarkType = "24">
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B686F207-B318-4085-92D2-17D24A81999D"
+            uuid = "2CCE2EC2-27DD-470B-9F9F-DC61C60F753D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "dataSource"
-            landmarkType = "24">
+            startingLineNumber = "294"
+            endingLineNumber = "294"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F4527D46-6F92-4C68-B894-732C5C2E6D01"
+            uuid = "E8D8653A-51CC-4895-8F9C-4D13134C3116"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "dataSource"
-            landmarkType = "24">
+            startingLineNumber = "293"
+            endingLineNumber = "293"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DA65229E-61F7-434D-970E-558EA977AC02"
+            uuid = "31FD06FD-FB10-4C12-A42F-1B518A5E6571"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20668D7E-319D-4CAD-B56F-8C93C65F79CB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "827D9938-675B-4699-81BF-C0A8D56608D6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "840C3F26-2964-4473-8C7B-942C1843D353"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5E85FC43-1E5B-4A47-A304-ADD64B3CB11D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "setupAutoLayout()"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "setupSubviews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D877B745-6403-44AC-A948-523A6A07F85E"
+            uuid = "7D453DAC-53B7-4F75-9976-4E0CD85BDCF3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/swift-eosio/Sources/EOSIO/Chain/Signature.swift"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/secp256k1/Recovery.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "init(stringValue:)"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "init(_:signature:format:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D8FD0521-CBD1-4311-BB41-D23397D05CD3"
+            uuid = "A9758B2F-774C-4C42-8008-0EF938B7BB3C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+            filePath = "certificates-ios-client/Managers/Secp256k1Manager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "verifySignature(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B6D2E91F-F15D-444E-BAD0-08F629BA7E75"
+            uuid = "CF8655A6-7DA2-4868-8182-BA0311B19708"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+            filePath = "certificates-ios-client/Managers/Secp256k1Manager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "sliderDidChangeValue(slider:)"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "test()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4D4D0940-2359-4570-B219-88D2A582BC70"
+            uuid = "49DE5E56-B765-422F-B244-F2A38F7330ED"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1_swift/Classes/secp256k1.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "getDictionaryFromString(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0D5A9C05-AC70-4E04-8BE5-AC1D13AA0C3B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "parseQrStringData(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CBB599AB-CE0F-4DF7-9A93-D1FCD31ADAF2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "isQrKeyValueValid(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A7591911-738C-4E0C-81D2-015DAD657250"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "getDictionaryFromString(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DEC84B8D-E7A6-4007-B836-BBB5D65AA094"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/SmthWentWrongScreen/SmthWentWrongScreenCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "tryAgain()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1D189467-02DF-49B6-8E66-B503CDE4B86E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "recoverPublicKey(hash:signature:compressed:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

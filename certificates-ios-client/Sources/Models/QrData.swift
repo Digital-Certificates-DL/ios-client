@@ -13,3 +13,4 @@ struct QrData {
     var signature: String
     var certificatePage: String?
 }
+

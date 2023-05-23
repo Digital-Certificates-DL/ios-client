@@ -46,7 +46,6 @@ class QrScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupQrScanner()
         startScan()
         setupAutoLayout()
@@ -130,7 +129,7 @@ extension QrScreenViewController: AVCaptureMetadataOutputObjectsDelegate {
                 guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
                 guard let stringValue = readableObject.stringValue else { return }
                 AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-                viewModel.parseQr(stringValue)
+                viewModel.sendQrData(stringValue)
             }
         }
     }

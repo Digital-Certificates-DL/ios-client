@@ -9,31 +9,64 @@ import Foundation
 
 
 protocol QrScreenViewModelProvider: AnyObject {
-    func parseQr(_ qrStringData: String)
+    func sendQrData(_ qrStringData: String)
     func dismiss()
 }
 
 class QrScreenViewModel: QrScreenViewModelProvider {
+    typealias Action = () -> Void
     
     enum Path {
         case dismiss
-        case parseQr(data: String)
+        case presentLoader
+        case dismissLoaderAndStartSmthWentWrongFlow
+        case dismissLoaderAndStartInfoFlow
     }
     
     private let pathHandler: (QrScreenViewModel.Path) -> Void
     private let model: QrScreenModelProvider
+    private let certificateVerifier: CertificateVerifierProtocol
     
-    init(model: QrScreenModelProvider, pathHandler: @escaping (QrScreenViewModel.Path) -> Void) {
+    init(
+        model: QrScreenModelProvider,
+        certificateVerifier: CertificateVerifierProtocol,
+        pathHandler: @escaping (QrScreenViewModel.Path) -> Void
+    ) {
         self.model = model
         self.pathHandler = pathHandler
+        self.certificateVerifier = certificateVerifier
+    }
+    
+    func sendQrData(_ qrStringData: String) {
+        startLoader()
+        guard let qrData = certificateVerifier.parseQrCode(qrStringData),
+              certificateVerifier.isValidQrCode(qrData) else {
+            startSmthWentWrong()
+            return
+        }
+        
+        Task { [weak self] in
+            let validatedCertificate = await self?.certificateVerifier.validateCertificate(qrData)
+            await MainActor.run {
+                startInfoScreen()
+            }
+        }
     }
     
     func dismiss() {
         
     }
     
-    func parseQr(_ qrStringData: String) {
-        pathHandler(.parseQr(data: qrStringData))
+    private func startInfoScreen() {
+        pathHandler(.dismissLoaderAndStartInfoFlow)
+    }
+        
+    private func startLoader() {
+        pathHandler(.presentLoader)
     }
     
+    private func startSmthWentWrong() {
+        pathHandler(.dismissLoaderAndStartSmthWentWrongFlow)
+    }
+
 }

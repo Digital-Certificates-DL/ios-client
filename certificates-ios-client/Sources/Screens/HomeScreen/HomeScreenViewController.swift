@@ -8,6 +8,9 @@
 import UIKit
 import SnapKit
 import Combine
+//import secp256k1
+import secp256k1_swift
+
 
 class HomeScreenViewController: UIViewController {
     private typealias DataSource = HomeScreenTableViewDataSource
@@ -56,11 +59,6 @@ class HomeScreenViewController: UIViewController {
         bind()
         
         viewModel.didLoad()
-        
-    }
-    
-    deinit {
-        print("deleted")
     }
     
     init(viewModel: HomeScreenViewModelProvider) {
@@ -83,12 +81,45 @@ class HomeScreenViewController: UIViewController {
         setupAutoLayout()
     }
     
+//    func recoverPublicKey(signature: UnsafePointer<UInt8>, message: UnsafePointer<UInt8>, pubkey: UnsafeMutablePointer<secp256k1_pubkey>) -> Int32? {
+//        guard let ctx = secp256k1_context_create() else {
+//            fatalError("Failed to create secp256k1 context")
+//        }
+//        
+//        
+//        
+//        var digest = [UInt8](repeating: 0, count: Int(SHA256_DIGEST_LENGTH))
+//        SHA256(message, UInt32(strlen(UnsafePointer<CChar>(message))), &digest)
+//        
+//        let result = secp256k1_ecdsa_recover(ctx, pubkey, signature, digest)
+//        
+//        secp256k1_context_destroy(ctx)
+//        return result
+//    }
+    
     private func setupSubviews() {
         view.backgroundColor = .white
                 
         view.addSubview(selectScanOptionLabel)
         view.addSubview(youCanScanLabel)
         view.addSubview(tableView)
+//        var pubkey = secp256k1_pubkey()
+//        secp256k1_ecdsa_recoverable_signature
+//        let signatureData = Data(base64Encoded: "G1EB37Vx8llI+7T0ZFhXN3h6QE30ah39DSECDfKbLgc0NCedqwHirLlvnTVKYLD1jl4BIbyMXQ0jBGmWuWHFvM8=")!
+//        let messageData = "03.04.2023 Daria Hudemchuk Beginner at theoretical aspects blockchain technology".data(using: .utf8)!
+//        let signature = try! secp256k1.Recovery.ECDSASignature(dataRepresentation: signatureData)
+//        let publicKeyRecovery = try! secp256k1.Recovery.PublicKey(messageData, signature: signature)
+//        let publicKeySigning = try! secp256k1.Signing.PublicKey(
+//            dataRepresentation: publicKeyRecovery.dataRepresentation.compactSizePrefix,
+//            format: .compressed
+//        )
+        
+        Secp256k1Manager().test()
+
+//        print(publicKeySigning.isValidSignature(try! signature.normalize, for: messageData))
+        
+
+        
         
         tableView.alwaysBounceVertical = false
         tableView.separatorStyle = .none
@@ -96,9 +127,9 @@ class HomeScreenViewController: UIViewController {
         tableView.delegate = self
         tableView.backgroundColor = .white
         tableView.register(ActionTableViewCell.self, forCellReuseIdentifier: ActionTableViewCell.identifier)
-
     }
-    
+        
+
     private func setupAutoLayout() {
         selectScanOptionLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(80.0)

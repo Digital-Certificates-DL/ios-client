@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bitcoinScanApiUrl</key>
+	<string>https://blockstream.info/api/</string>
+	<key>certificatesUrl</key>
+	<string>https://script.googleusercontent.com/macros/echo?user_content_key=J6buTV5x-2wY_I8Wpp9XT4qFaC6bIKg8X4qN82cNZnBq1Zxh7N1P5GgzAZNUgOw-rWgEFTgUZXck0xkVQTHnwkg3hCAIDQdLm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnMExAVbLgu_OvrTyJbFzp7VnQMXP5N6ZBiDL1daUbxC5bLyUtlW9p6DC7wiA2qVziWAiUva1N7ZbOOfA_3npVNjd8iUjuBvOBtz9Jw9Md8uu&amp;lib=MqxSBsS-_kO-yCSPTYdB8Zta9yFOYf39W</string>
+</dict>
+</plist>
