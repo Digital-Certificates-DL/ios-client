@@ -2,7 +2,6 @@ PODS:
   - Alamofire (5.7.1)
   - KeychainSwift (20.0.0)
   - lottie-ios (4.2.0)
-  - secp256k1_swift (1.0.3)
   - SnapKit (5.0.1)
   - UIColor_Hex_Swift (5.1.9)
 
@@ -10,7 +9,6 @@ DEPENDENCIES:
   - Alamofire
   - KeychainSwift (~> 20.0)
   - lottie-ios
-  - secp256k1_swift (~> 1.0.0)
   - SnapKit (~> 5.0.0)
   - UIColor_Hex_Swift (~> 5.1.9)
 
@@ -19,7 +17,6 @@ SPEC REPOS:
     - Alamofire
     - KeychainSwift
     - lottie-ios
-    - secp256k1_swift
     - SnapKit
     - UIColor_Hex_Swift
 
@@ -27,10 +24,9 @@ SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
   KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
   lottie-ios: 809ecf2d460ed650a6aed7aa88b2ec45fab4779c
-  secp256k1_swift: 4fc5c4b2d2c6d21ee8ccb868cdc92da12f38bed9
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   UIColor_Hex_Swift: 20cb4e8d51b63e168a9da6933bc5d39cd8fb4ab5
 
-PODFILE CHECKSUM: 9ee44118cb6ee63396772b539dfa4f8de5112dfc
+PODFILE CHECKSUM: c4bedaa5590269b6c7d1df19d82e54097b32bba2
 
 COCOAPODS: 1.11.3

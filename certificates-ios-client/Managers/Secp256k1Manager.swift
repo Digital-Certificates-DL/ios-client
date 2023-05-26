@@ -7,7 +7,6 @@
 
 import Foundation
 import secp256k1
-import secp256k1_swift
 import CryptoKit
 
 
@@ -16,7 +15,9 @@ class Secp256k1Manager {
     func getRecoverableSignature(
         base64StringRecoverableSignature: String
     ) -> secp256k1_ecdsa_recoverable_signature {
-        let data = base64StringRecoverableSignature.data(using: .utf8)!
+        let data = Data(base64Encoded: base64StringRecoverableSignature)!
+
+
         return getRecoverableSignaturePrivate(base64StringRecoverableSignature: data)
     }
     
@@ -66,10 +67,28 @@ class Secp256k1Manager {
     ) -> secp256k1_ecdsa_recoverable_signature {
         let context = secp256k1_context_create(UInt32(SECP256K1_CONTEXT_NONE))!
         var signature = secp256k1_ecdsa_recoverable_signature()
-        let bytes = base64StringRecoverableSignature.bytes
+        var bytes = base64StringRecoverableSignature.bytes
+        var header = bytes[0] & 0xFF
+        if header >= 31 {
+            header -= 4
+        }
+        var recId = header - 27
+        print(recId)
+        print(bytes)
+        bytes = Array(bytes[1...64])
+        print(bytes)
+        print(bytes.count)
+//        var r = bytes[0...32]
+//        var s = bytes[33...64]
+//        let rR =
+        
+//        secp256k1_ecdsa_recoverable_signature_load(context, <#T##secp256k1_scalar#>, <#T##secp256k1_scalar#>, <#T##Int32#>, <#T##secp256k1_ecdsa_recoverable_signature#>)
+//        print(recId)
 //        secp256k1_ecdsa_recoverable_signature
-        if (secp256k1_ecdsa_recoverable_signature_parse_compact(context, &signature, bytes, 0) == 0) {
-            fatalError("failed to get recoverable signature")
+//        let recoveryId: Int32 = 0
+
+        if (secp256k1_ecdsa_recoverable_signature_parse_compact(context, &signature, bytes, Int32(recId)) == 0) {
+            print("error there")
         }
         secp256k1_context_destroy(context)
         return signature
@@ -79,11 +98,12 @@ class Secp256k1Manager {
         _ recoverableSignature: secp256k1_ecdsa_recoverable_signature,
         _ message: [UInt8]
     ) -> secp256k1_pubkey {
-        let context = secp256k1_context_create(UInt32(SECP256K1_CONTEXT_VERIFY) | UInt32(SECP256K1_CONTEXT_SIGN))!
+        let context = secp256k1_context_create(UInt32(SECP256K1_CONTEXT_NONE))!
         var publicKey = secp256k1_pubkey()
+        
         var recoverableSignature = recoverableSignature
         if secp256k1_ecdsa_recover(context, &publicKey, &recoverableSignature, message) == 0 {
-            fatalError("failed to recover public key")
+            fatalError("error")
         }
         secp256k1_context_destroy(context)
         return publicKey
@@ -101,58 +121,97 @@ class Secp256k1Manager {
         secp256k1_context_destroy(context)
         return isValid
     }
-    
+    //
 //    1b5101dfb571f25948fbb4f464585737787a404df46a1dfd0d21020df29b2e073434279dab01e2acb96f9d354a60b0f58e5e0121bc8c5d0d23046996b961c5bccf
 
     func test() {
         let context = secp256k1_context_create(UInt32(SECP256K1_CONTEXT_NONE))!
-//        let recoverySignature = "G1EB37Vx8llI+7T0ZFhXN3h6QE30ah39DSECDfKbLgc0NCedqwHirLlvnTVKYLD1jl4BIbyMXQ0jBGmWuWHFvM8="
-        let recoverySiganture = "1b5101dfb571f25948fbb4f464585737787a404df46a1dfd0d21020df29b2e073434279dab01e2acb96f9d354a60b0f58e5e0121bc8c5d0d23046996b961c5bccf"
-//        let recoverySignature = "1b5101dfb571f25948fbb4f464585737787a404df46a1dfd0d21020df29b2e073"
+        let recoverySiganture = "G1EB37Vx8llI+7T0ZFhXN3h6QE30ah39DSECDfKbLgc0NCedqwHirLlvnTVKYLD1jl4BIbyMXQ0jBGmWuWHFvM8="
+//        let recoverySiganture = "1b5101dfb571f25948fbb4f464585737787a404df46a1dfd0d21020df29b2e073434279dab01e2acb96f9d354a60b0f58e5e0121bc8c5d0d23046996b961c5bccf"
         let message = "03.04.2023 Daria Hudemchuk Beginner at theoretical aspects blockchain technology"
-        
-        var hashed = SHA256.hash(data: message.data(using: .utf8)!)
-        var hashedData = Data(bytes: hashed.bytes, count: hashed.bytes.count)
+        var res = recoverPublicKey(recoverySiganture, message)
+        var bytes = [UInt8](repeating: 0, count: 65)
+        var length = 65
+        secp256k1_ec_pubkey_serialize(context, &bytes, &length, &res, UInt32(SECP256K1_EC_UNCOMPRESSED))
+        print(bytes.count)
+//        print(bytes)
+        print(String(bytes: bytes))
+
+        secp256k1_context_destroy(context)
+//        var hashed = SHA256.hash(data: message.data(using: .utf8)!)
+//        var hashedData = Data(bytes: hashed.bytes, count: hashed.bytes.count)
         
 //        print(data.count)
-        let randomkey = SECP256K1.generatePrivateKey()
-        let (serialized, raw) = SECP256K1.signForRecovery(hash: hashedData, privateKey: randomkey!)
+//        let randomkey = SECP256K1.generatePrivateKey()
+//        let (serialized, raw) = SECP256K1.signForRecovery(hash: hashedData, privateKey: randomkey!)
 //        let base64data = Data(base64Encoded: raw!)!
 //        print(raw?.bytes)
 //        print(String(bytes: raw!.bytes))
 //        print(String(data: base64data, encoding: .utf8)!)
 //        let signature = SECP256K1.signForRecovery(hash: randomHash, privateKey: randomPrivateKey, useExtraEntropy: false)
-        let data = Data(bytes: raw!.bytes, count: raw!.bytes.count)
-        print(SECP256K1.recoverPublicKey(hash: hashedData, signature: data))
-//        var res = recoverPublicKey(recoverySignature, message)
-//        var bytes = [UInt8](repeating: 0, count: 65)
-//        var length = 65
-//        secp256k1_ec_pubkey_serialize(context, &bytes, &length, &res, UInt32(SECP256K1_EC_UNCOMPRESSED))
-//        print(bytes.count)
-//        print(bytes)
+//        let data = Data(bytes: raw!.bytes, count: raw!.bytes.count)
+//        print(SECP256K1.recoverPublicKey(hash: hashedData, signature: data))
+        
+
 //
 
 //        
 //        var base64pk = String(bytes: bytes)
 //        print(base64pk)
-//        secp256k1_context_destroy(context)
+    }
+    
+    func test3() {
+        var context = secp256k1_context_create(UInt32(SECP256K1_CONTEXT_NONE))!
+        var expectedRecoverySignature = Data(base64Encoded: "G1EB37Vx8llI+7T0ZFhXN3h6QE30ah39DSECDfKbLgc0NCedqwHirLlvnTVKYLD1jl4BIbyMXQ0jBGmWuWHFvM8=")!
+        let messageData = "03.04.2023 Daria Hudemchuk Beginner at theoretical aspects blockchain technology".data(using: .utf8)!
+        let hashed = SHA256.hash(data: messageData)
+        let recoverSignature = getRecoverableSignaturePrivate(base64StringRecoverableSignature: expectedRecoverySignature)
+        var publicKey = recoverPublicKeyPrivate(recoverSignature, hashed.bytes)
+        
+        var bytes = [UInt8](repeating: 0, count: 33)
+        var length = bytes.count
+        print("length:", length)
+        
+        secp256k1_ec_pubkey_serialize(context, &bytes, &length, &publicKey, UInt32(SECP256K1_EC_COMPRESSED))
+        print(String(bytes: bytes))
+        secp256k1_context_destroy(context)
+//        print(String(bytes: hashed.bytes))
+        
+        
     }
     
     func test2() {
-        let recoverySignatureBase64String = "G1EB37Vx8llI+7T0ZFhXN3h6QE30ah39DSECDfKbLgc0NCedqwHirLlvnTVKYLD1jl4BIbyMXQ0jBGmWuWHFvM8="
-        let recoverySignatureHex = "1b5101dfb571f25948fbb4f464585737787a404df46a1dfd0d21020df29b2e073434279dab01e2acb96f9d354a60b0f58e5e0121bc8c5d0d23046996b961c5bccf"
-        let message = "03.04.2023 Daria Hudemchuk Beginner at theoretical aspects blockchain technology"
-        let msgHash = SHA256.hash(data: "For this sample, this 63-byte string will be used as input data".data(using: .utf8)!)
+        var expectedRecoverySignature = Data(base64Encoded: "G1EB37Vx8llI+7T0ZFhXN3h6QE30ah39DSECDfKbLgc0NCedqwHirLlvnTVKYLD1jl4BIbyMXQ0jBGmWuWHFvM8=")!
+        var header = expectedRecoverySignature[64] & 0xFF
         
-        print("bytes:",  String(bytes: msgHash.bytes))
-        let messageData = message.data(using: .utf8)!
-        let recoverySignatureBase64Data = Data(base64Encoded: recoverySignatureBase64String)!
-        let recoverySignatureBase64Bytes = try! recoverySignatureHex.bytes
-        let recoverySignature = try! secp256k1.Recovery.ECDSASignature(dataRepresentation: recoverySignatureBase64Bytes)
-        let pk = try! secp256k1.Recovery.PublicKey(messageData, signature: recoverySignature)
+        print(expectedRecoverySignature.bytes.count)
+        print(expectedRecoverySignature[0])
+        expectedRecoverySignature[0] -= 27
+//        print
+        print(expectedRecoverySignature)
+//        let recoverySignatureBase64String = "G1EB37Vx8llI+7T0ZFhXN3h6QE30ah39DSECDfKbLgc0NCedqwHirLlvnTVKYLD1jl4BIbyMXQ0jBGmWuWHFvM8="
+//        let recoverySignatureHex = "1b5101dfb571f25948fbb4f464585737787a404df46a1dfd0d21020df29b2e073434279dab01e2acb96f9d354a60b0f58e5e0121bc8c5d0d23046996b961c5bccf"
+//        let message = "03.04.2023 Daria Hudemchuk Beginner at theoretical aspects blockchain technology"
+//        let messageData = "We're all Satoshi Nakamoto and a bit of Harold Thomas Finney II.".data(using: .utf8)!
+////        let msgHash = SHA256.hash(data: "For this sample, this 63-byte string will be used as input data".data(using: .utf8)!)
+////
+////        print("bytes:",  String(bytes: msgHash.bytes))
+////        let messageData = message.data(using: .utf8)!
+//        let recoverySignatureBase64Data = Data(base64Encoded: expectedRecoverySignature)!
+////        let recoverySignatureBase64Bytes = try! recoverySignatureHex.bytes
+        let recoverySignature = try! secp256k1.Recovery.ECDSASignature(dataRepresentation: expectedRecoverySignature)
+//        print(recoverySignature.dataRepresentation.base64EncodedString() == expectedRecoverySignature)
+//        let pk = try! secp256k1.Recovery.PublicKey(messageData, signature: recoverySignature)
+//        print(pk.dataRepresentation.)
+        let messageData = "03.04.2023 Daria Hudemchuk Beginner at theoretical aspects blockchain technology".data(using: .utf8)!
+        let publicKey = try! secp256k1.Recovery.PublicKey(messageData, signature: recoverySignature, format: .compressed)
+        
+        print(String(bytes: publicKey.dataRepresentation))
     }
     
     func testPublicKeyRecovery() {
+        
+        
         let expectedRecoverySignature = "rPnhleCU8vQOthm5h4gX/5UbmxH6w3zw1ykAmLvvtXT4YGKBoiMaP8eBBF8upN8IaTYmO7+o0Vyhf+cODD1uVgE="
         let expectedPrivateKey = "5f6d5afecc677d66fb3d41eee7a8ad8195659ceff588edaf416a9a17daf38fdd"
         let privateKeyBytes = try! expectedPrivateKey.bytes
@@ -162,9 +221,11 @@ class Secp256k1Manager {
         let recoverySignature = try! privateKey.signature(for: messageData)
 
         // Verify the recovery signature matches the expected output
-//        XCTAssertEqual(expectedRecoverySignature, recoverySignature.dataRepresentation.base64EncodedString())
+        print(expectedRecoverySignature == recoverySignature.dataRepresentation.base64EncodedString())
 
         let publicKey = try! secp256k1.Recovery.PublicKey(messageData, signature: recoverySignature)
+        print(String(bytes: publicKey.dataRepresentation))
+
 
         // Verify the recovered public key matches the expected public key
 //        XCTAssertEqual(publicKey.dataRepresentation, privateKey.publicKey.dataRepresentation)

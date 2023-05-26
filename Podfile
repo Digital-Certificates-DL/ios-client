@@ -10,7 +10,6 @@ target 'certificates-ios-client' do
   pod 'KeychainSwift', '~> 20.0'
   pod 'UIColor_Hex_Swift', '~> 5.1.9'
   pod 'lottie-ios'
-  pod 'secp256k1_swift', '~> 1.0.0'
 
   target 'certificates-ios-clientTests' do
     inherit! :search_paths
