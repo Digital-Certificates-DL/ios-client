@@ -13,7 +13,7 @@ protocol InfoScreenViewModelProvider: AnyObject {
     func dismiss()
     
     func copyData()
-    func shereData()
+    func shereData() -> String
 }
 
 
@@ -33,11 +33,11 @@ class InfoScreenViewModel: InfoScreenViewModelProvider {
     }
     
     func copyData() {
-        UIPasteboard.general.string = "message: 0000"
+        UIPasteboard.general.string = model.getDataForCopy()
     }
     
-    func shereData() {
-
+    func shereData() -> String {
+        model.getDataForCopy()
     }
     
     func didLoad() {

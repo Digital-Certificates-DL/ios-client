@@ -66,6 +66,7 @@ class InfoScreenViewController: UIViewController {
         viewModel.didLoad()
     }
     
+    
     private func bind() {
         viewModel.infoItemsPublisher.sink { [weak self] items in
             self?.applyItems(items)
@@ -79,10 +80,10 @@ class InfoScreenViewController: UIViewController {
         setupSubviews()
         setupAutoLayout()
     }
-    
+        
     private func setupSubviews() {
         view.backgroundColor = .white
-        
+//        navigationController?.delegate = self
         
         view.addSubview(tableView)
         
@@ -99,10 +100,10 @@ class InfoScreenViewController: UIViewController {
     
     
     private func initNavigationBar() {
-        let backIcon = UIImage(named: "back_button")
+//        let backIcon = UIImage(named: "back_button")
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.navigationBar.backIndicatorImage = backIcon
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = backIcon
+//        navigationController?.navigationBar.backIndicatorImage = backIcon
+//        navigationController?.navigationBar.backIndicatorTransitionMaskImage = backIcon
         navigationController?.navigationBar.backItem?.title = "QR-code"
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.backgroundColor = .accentPrimary
@@ -142,8 +143,9 @@ extension InfoScreenViewController: UITableViewDelegate {
             ToastManager.show(message: "Coppied to clickBoard", controller: self)
         }
         if indexPath.row == 7 && indexPath.section == 0 {
-            let text = "This is some text that I want to share."
+            let text = viewModel.shereData()
             ShereManager.shereText(text: text, vc: self)
         }
     }
 }
+

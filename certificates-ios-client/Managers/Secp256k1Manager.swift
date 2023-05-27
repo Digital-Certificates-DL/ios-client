@@ -62,6 +62,8 @@ class Secp256k1Manager {
         return isValid
     }
     
+    
+    
     private func getRecoverableSignaturePrivate(
         base64StringRecoverableSignature: Data
     ) -> secp256k1_ecdsa_recoverable_signature {
@@ -69,15 +71,20 @@ class Secp256k1Manager {
         var signature = secp256k1_ecdsa_recoverable_signature()
         var bytes = base64StringRecoverableSignature.bytes
         var header = bytes[0] & 0xFF
-        if header >= 31 {
-            header -= 4
-        }
         var recId = header - 27
-        print(recId)
-        print(bytes)
         bytes = Array(bytes[1...64])
-        print(bytes)
-        print(bytes.count)
+        bytes.append(recId)
+//        var header = bytes[64]
+//        if header >= 31 {
+//            header -= 4
+//        }
+//
+        
+//        print(recId)
+//        print(bytes)
+//        bytes = Array(bytes[1...64])
+//        print(bytes)
+//        print(bytes.count)
 //        var r = bytes[0...32]
 //        var s = bytes[33...64]
 //        let rR =
@@ -168,11 +175,11 @@ class Secp256k1Manager {
         let recoverSignature = getRecoverableSignaturePrivate(base64StringRecoverableSignature: expectedRecoverySignature)
         var publicKey = recoverPublicKeyPrivate(recoverSignature, hashed.bytes)
         
-        var bytes = [UInt8](repeating: 0, count: 33)
+        var bytes = [UInt8](repeating: 0, count: 65)
         var length = bytes.count
         print("length:", length)
         
-        secp256k1_ec_pubkey_serialize(context, &bytes, &length, &publicKey, UInt32(SECP256K1_EC_COMPRESSED))
+        secp256k1_ec_pubkey_serialize(context, &bytes, &length, &publicKey, UInt32(SECP256K1_EC_UNCOMPRESSED))
         print(String(bytes: bytes))
         secp256k1_context_destroy(context)
 //        print(String(bytes: hashed.bytes))

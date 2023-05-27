@@ -6,9 +6,13 @@
 //
 
 import Foundation
+import Combine
 
 
 protocol QrScreenViewModelProvider: AnyObject {
+    var needToStartScaning: CurrentValueSubject<Bool, Never> { get }
+
+    func setNeedToStartScaning(_ bool: Bool)
     func sendQrData(_ qrStringData: String)
     func dismiss()
 }
@@ -20,8 +24,10 @@ class QrScreenViewModel: QrScreenViewModelProvider {
         case dismiss
         case presentLoader
         case dismissLoaderAndStartSmthWentWrongFlow
-        case dismissLoaderAndStartInfoFlow
+        case dismissLoaderAndStartInfoFlow(QrDataValidated)
     }
+    
+    private(set) var needToStartScaning: CurrentValueSubject<Bool, Never> = .init(false)
     
     private let pathHandler: (QrScreenViewModel.Path) -> Void
     private let model: QrScreenModelProvider
@@ -37,6 +43,10 @@ class QrScreenViewModel: QrScreenViewModelProvider {
         self.certificateVerifier = certificateVerifier
     }
     
+    func setNeedToStartScaning(_ bool: Bool) {
+        needToStartScaning.send(true)
+    }
+    
     func sendQrData(_ qrStringData: String) {
         startLoader()
         guard let qrData = certificateVerifier.parseQrCode(qrStringData),
@@ -48,7 +58,7 @@ class QrScreenViewModel: QrScreenViewModelProvider {
         Task { [weak self] in
             let validatedCertificate = await self?.certificateVerifier.validateCertificate(qrData)
             await MainActor.run {
-                startInfoScreen()
+                startInfoScreen(validatedCertificate: validatedCertificate!)
             }
         }
     }
@@ -57,8 +67,8 @@ class QrScreenViewModel: QrScreenViewModelProvider {
         
     }
     
-    private func startInfoScreen() {
-        pathHandler(.dismissLoaderAndStartInfoFlow)
+    private func startInfoScreen(validatedCertificate: QrDataValidated) {
+        pathHandler(.dismissLoaderAndStartInfoFlow(validatedCertificate))
     }
         
     private func startLoader() {
@@ -70,3 +80,4 @@ class QrScreenViewModel: QrScreenViewModelProvider {
     }
 
 }
+

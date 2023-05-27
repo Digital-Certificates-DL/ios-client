@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Combine
+import secp256k1
 
 
 class HomeScreenViewController: UIViewController {
@@ -78,15 +79,15 @@ class HomeScreenViewController: UIViewController {
         setupSubviews()
         setupAutoLayout()
     }
-        
+    
     private func setupSubviews() {
         view.backgroundColor = .white
                 
         view.addSubview(selectScanOptionLabel)
         view.addSubview(youCanScanLabel)
         view.addSubview(tableView)
-        
-//        Secp256k1Manager().test3()
+                
+        Secp256k1Manager().test3()
         
         tableView.alwaysBounceVertical = false
         tableView.separatorStyle = .none

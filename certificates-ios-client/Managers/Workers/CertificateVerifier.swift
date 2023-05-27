@@ -49,28 +49,16 @@ class CertificateVerifier: CertificateVerifierProtocol {
         _ qrData: QrData
     ) async -> QrDataValidated {
         var qrDataValidated = QrDataValidated(qrData: qrData, certificateIsValid: false)
+        
 //         checkSignature()
-//        let signatureData = Data(base64Encoded: qrData.signature)!
-//        let messageData = qrData.message.data(using: .utf8)!
-//        let signature = try! secp256k1.Recovery.ECDSASignature(dataRepresentation: signatureData)
-//        let publicKeyRecovery = try! secp256k1.Recovery.PublicKey(messageData, signature: signature)
-//
-//        let publicKeySigning = try! secp256k1.Signing.PublicKey(
-//            dataRepresentation: publicKeyRecovery.dataRepresentation.compactSizePrefix,
-//            format: .compressed
-//        )
-//
-//        print(publicKeySigning.isValidSignature(try! signature.normalize, for: messageData))
-//        
-//        
-        
-        
+    
         guard let certificate = await certificateProvider.getCertificate(with: qrDataValidated.signature) else {
             return qrDataValidated
         }
         
         await transactionProvider.provideTransactionWithId(txHash: certificate.txHash)
         guard let timeStamping = getTimestampingField(transaction: transactionProvider.transaction) else {
+            qrDataValidated.certificateIsValid = true
             return qrDataValidated
         }
         
@@ -80,13 +68,7 @@ class CertificateVerifier: CertificateVerifierProtocol {
         
         return qrDataValidated
     }
-    
-//    func checkSignature() -> Bool {
-//        let a: secp256k1_pubkey
-//        let b = secp256k1_ecdsa_recoverable_signature()
-//        secp256k1_ecdsa_recover(, <#T##secp256k1_pubkey#>, <#T##secp256k1_ecdsa_recoverable_signature#>, <#T##Int8#>)
-//        return false
-//    }
+
 }
 
 private extension CertificateVerifier {

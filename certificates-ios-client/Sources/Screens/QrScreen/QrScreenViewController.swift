@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import SnapKit
+import Combine
 
 class QrScreenViewController: UIViewController {
     var captureSession: AVCaptureSession!
@@ -16,7 +17,7 @@ class QrScreenViewController: UIViewController {
     let sessionQueue = DispatchQueue(label: "sessionQueue", qos: .background)
 
     private let viewModel: QrScreenViewModelProvider
-
+    private var cancellable = Set<AnyCancellable>()
     
     private lazy var scannerView: UIView = {
         let myView = UIView()
@@ -48,23 +49,21 @@ class QrScreenViewController: UIViewController {
         super.viewDidLoad()
         setupQrScanner()
         startScan()
+        bind()
         setupAutoLayout()
     }
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        if captureSession?.isRunning == false {
-            startScan()
-        }
+        resetToDefaultAppearance()
+        startScan()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if captureSession?.isRunning == true {
-            stopScan()
-        }
+        stopScan()
     }
+
     
     func setupAutoLayout() {
         view.addSubview(scannerView)
@@ -81,15 +80,33 @@ class QrScreenViewController: UIViewController {
         }
     }
     
+    private func bind() {
+        viewModel.needToStartScaning.sink { startScan in
+            if startScan {
+                self.startScan()
+            }
+        }.store(in: &cancellable)
+    }
+    
+    private func resetToDefaultAppearance() {
+        navigationController?.navigationBar.backItem?.title = nil
+        navigationController?.navigationBar.tintColor = .accentPrimary
+        navigationController?.navigationBar.backgroundColor = .clear
+    }
+    
     private func startScan() {
-        sessionQueue.async {
-            self.captureSession.startRunning()
+        if captureSession?.isRunning == false {
+            sessionQueue.async {
+                self.captureSession.startRunning()
+            }
         }
     }
     
     private func stopScan() {
-        sessionQueue.async {
-            self.captureSession.stopRunning()
+        if captureSession?.isRunning == true {
+            sessionQueue.async {
+                self.captureSession.stopRunning()
+            }
         }
     }
     
@@ -125,11 +142,11 @@ extension QrScreenViewController: AVCaptureMetadataOutputObjectsDelegate {
         if let metadataObject = metadataObjects.first {
             guard let metadataObjectRect = previewLayer.transformedMetadataObject(for: metadataObject) else { return }
             if scannerView.frame.contains(metadataObjectRect.bounds) {
-                stopScan()
                 guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
                 guard let stringValue = readableObject.stringValue else { return }
                 AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
                 viewModel.sendQrData(stringValue)
+                stopScan()
             }
         }
     }

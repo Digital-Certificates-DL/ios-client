@@ -11,6 +11,7 @@ class QrScreenCoordinator: Coordinator {
     var previousCoordinator: Coordinator?
     var currentCoordinator: Coordinator?
     
+    weak var viewModel: QrScreenViewModelProvider?
     private let serviceManager: ServiceManagerProvider
     private let rootNavigationController: UINavigationController
     
@@ -35,6 +36,7 @@ class QrScreenCoordinator: Coordinator {
             certificateProvider: certificateProvider,
             transactionProvider: transactionProvider
         )
+        
         let viewModel = QrScreenViewModel(
             model: model,
             certificateVerifier: certificateVerifier
@@ -46,10 +48,12 @@ class QrScreenCoordinator: Coordinator {
                 self.presentLoader()
             case .dismissLoaderAndStartSmthWentWrongFlow:
                 self.dismissLoaderAndStartSmthWentWrongFlow()
-            case .dismissLoaderAndStartInfoFlow:
-                self.dismissLoaderAndStartInfoFlow()
+            case .dismissLoaderAndStartInfoFlow(let validatedQr):
+                self.dismissLoaderAndStartInfoFlow(validatedCertificate: validatedQr)
             }
         }
+        
+        self.viewModel = viewModel
         let viewController = QrScreenViewController(viewModel: viewModel)
         rootNavigationController.pushViewController(viewController, animated: true)
     }
@@ -67,21 +71,26 @@ class QrScreenCoordinator: Coordinator {
         }
     }
     
-    func dismissLoaderAndStartInfoFlow() {
+    func dismissLoaderAndStartInfoFlow(validatedCertificate: QrDataValidated) {
         rootNavigationController.dismiss(animated: true) {
-            self.startInfoFlow()
+            self.startInfoFlow(validatedCertificate: validatedCertificate)
         }
     }
     
     func startSmthWentWrongFlow() {
-        let coordinator = SmthWentWrongScreenCoordinator(rootNavigationController: self.rootNavigationController)
+        let coordinator = SmthWentWrongScreenCoordinator(rootNavigationController: self.rootNavigationController) { [unowned self] externalPath in
+            switch externalPath {
+            case .tryAgain:
+                self.viewModel?.setNeedToStartScaning(true)
+            }
+        }
         coordinator.previousCoordinator = self
         self.currentCoordinator = coordinator
         coordinator.start()
     }
     
-    func startInfoFlow() {
-        let coordinator = InfoScreenCoordinator(rootNavigationController: rootNavigationController)
+    func startInfoFlow(validatedCertificate: QrDataValidated) {
+        let coordinator = InfoScreenCoordinator(rootNavigationController: rootNavigationController, validatedCertificate: validatedCertificate)
         coordinator.previousCoordinator = self
         self.currentCoordinator = coordinator
         coordinator.start()
