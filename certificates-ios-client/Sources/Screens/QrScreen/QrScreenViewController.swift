@@ -16,6 +16,7 @@ class QrScreenViewController: UIViewController {
     var metadataOutput: AVCaptureMetadataOutput!
     let sessionQueue = DispatchQueue(label: "sessionQueue", qos: .background)
 
+    
     private let viewModel: QrScreenViewModelProvider
     private var cancellable = Set<AnyCancellable>()
     
@@ -158,6 +159,9 @@ extension QrScreenViewController: AVCaptureMetadataOutputObjectsDelegate {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
+    
+    
+
 }
 
 

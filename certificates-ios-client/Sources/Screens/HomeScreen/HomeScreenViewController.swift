@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Combine
+import Mantis
 import secp256k1
 
 
@@ -15,6 +16,8 @@ class HomeScreenViewController: UIViewController {
     private typealias DataSource = HomeScreenTableViewDataSource
     private let viewModel: HomeScreenViewModelProvider
     private var cancellable = Set<AnyCancellable>()
+    
+    var imagePicker = UIImagePickerController()
     
     private lazy var selectScanOptionLabel: UILabel = {
         let label = UILabel()
@@ -56,7 +59,6 @@ class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bind()
-        
         viewModel.didLoad()
     }
     
@@ -82,7 +84,7 @@ class HomeScreenViewController: UIViewController {
     
     private func setupSubviews() {
         view.backgroundColor = .white
-                
+        
         view.addSubview(selectScanOptionLabel)
         view.addSubview(youCanScanLabel)
         view.addSubview(tableView)
@@ -122,13 +124,35 @@ class HomeScreenViewController: UIViewController {
     }
 }
 
-extension HomeScreenViewController: UITableViewDelegate {
+extension HomeScreenViewController: UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 && indexPath.section == 0 {
             viewModel.selectUseCameraAction()
         }
         if indexPath.row == 1 && indexPath.section == 0 {
-            viewModel.selectUploadImageAction()
+            
+            setPicture()
+            
         }
     }
+    
+    
+  
+    func setPicture() {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = false
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            viewModel.selectUploadImageAction(image: image)
+        }
+        
+    }
+
 }

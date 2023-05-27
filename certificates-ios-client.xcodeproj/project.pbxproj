@@ -86,6 +86,10 @@
 		C34B56AB1B3FAFCA491D4434 /* Pods_certificates_ios_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D18E2D797BABDAED545C23 /* Pods_certificates_ios_client.framework */; };
 		C4A3A1E12A1380C100DFC12A /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1E02A1380C100DFC12A /* ToastManager.swift */; };
 		C4A3A1E32A13815900DFC12A /* ShereManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1E22A13815900DFC12A /* ShereManager.swift */; };
+		C4A3A1E92A150F2A00DFC12A /* QrCropModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1E82A150F2A00DFC12A /* QrCropModel.swift */; };
+		C4A3A1EB2A150F7D00DFC12A /* QrCropViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1EA2A150F7D00DFC12A /* QrCropViewModel.swift */; };
+		C4A3A1ED2A150F9C00DFC12A /* QrCropCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1EC2A150F9C00DFC12A /* QrCropCoordinator.swift */; };
+		C4A3A1EF2A150FB100DFC12A /* QrCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1EE2A150FB100DFC12A /* QrCropViewController.swift */; };
 		C4C6A4992A123AC20062C7BE /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4C6A4962A123AC20062C7BE /* Roboto-Bold.ttf */; };
 		C4C6A49A2A123AC20062C7BE /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4C6A4972A123AC20062C7BE /* Roboto-Medium.ttf */; };
 		C4C6A49B2A123AC20062C7BE /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4C6A4982A123AC20062C7BE /* Roboto-Regular.ttf */; };
@@ -190,6 +194,10 @@
 		A4BAFCAC4D948812344300B4 /* Pods-certificates-ios-client-certificates-ios-clientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates-ios-client-certificates-ios-clientUITests.release.xcconfig"; path = "Target Support Files/Pods-certificates-ios-client-certificates-ios-clientUITests/Pods-certificates-ios-client-certificates-ios-clientUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C4A3A1E02A1380C100DFC12A /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
 		C4A3A1E22A13815900DFC12A /* ShereManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShereManager.swift; sourceTree = "<group>"; };
+		C4A3A1E82A150F2A00DFC12A /* QrCropModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCropModel.swift; sourceTree = "<group>"; };
+		C4A3A1EA2A150F7D00DFC12A /* QrCropViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCropViewModel.swift; sourceTree = "<group>"; };
+		C4A3A1EC2A150F9C00DFC12A /* QrCropCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCropCoordinator.swift; sourceTree = "<group>"; };
+		C4A3A1EE2A150FB100DFC12A /* QrCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCropViewController.swift; sourceTree = "<group>"; };
 		C4C6A4962A123AC20062C7BE /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		C4C6A4972A123AC20062C7BE /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		C4C6A4982A123AC20062C7BE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -296,10 +304,10 @@
 		8446F38D2A0E849800F32C7F /* QrScreen */ = {
 			isa = PBXGroup;
 			children = (
-				8446F38E2A0E84C500F32C7F /* QrScreenViewModel.swift */,
-				8446F3902A0E84EC00F32C7F /* QrScreenModel.swift */,
 				8446F3922A0E84FE00F32C7F /* QrScreenCoordinator.swift */,
+				8446F3902A0E84EC00F32C7F /* QrScreenModel.swift */,
 				8446F3942A0E851300F32C7F /* QrScreenViewController.swift */,
+				8446F38E2A0E84C500F32C7F /* QrScreenViewModel.swift */,
 			);
 			path = QrScreen;
 			sourceTree = "<group>";
@@ -383,11 +391,12 @@
 		8453A3D32A0A80E300EDB553 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				C4D997612A0D0A03002A8BFF /* InfoScreen */,
-				8407A2A12A127CCF000A3EC4 /* SmthWentWrongScreen */,
-				846BC7072A1265330083D844 /* LoaderScreen */,
-				8446F38D2A0E849800F32C7F /* QrScreen */,
 				8453A3D42A0A810800EDB553 /* HomeScreen */,
+				C4D997612A0D0A03002A8BFF /* InfoScreen */,
+				846BC7072A1265330083D844 /* LoaderScreen */,
+				C4A3A1E52A150EAB00DFC12A /* QrCropScreen */,
+				8446F38D2A0E849800F32C7F /* QrScreen */,
+				8407A2A12A127CCF000A3EC4 /* SmthWentWrongScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -560,6 +569,17 @@
 				C4A3A1E22A13815900DFC12A /* ShereManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C4A3A1E52A150EAB00DFC12A /* QrCropScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C4A3A1EC2A150F9C00DFC12A /* QrCropCoordinator.swift */,
+				C4A3A1E82A150F2A00DFC12A /* QrCropModel.swift */,
+				C4A3A1EE2A150FB100DFC12A /* QrCropViewController.swift */,
+				C4A3A1EA2A150F7D00DFC12A /* QrCropViewModel.swift */,
+			);
+			path = QrCropScreen;
 			sourceTree = "<group>";
 		};
 		C4D997612A0D0A03002A8BFF /* InfoScreen */ = {
@@ -862,9 +882,11 @@
 				846BC70D2A1265660083D844 /* LoaderScreenCoordinator.swift in Sources */,
 				8453A3D02A0A801F00EDB553 /* Coordinator.swift in Sources */,
 				8407A2A72A127D17000A3EC4 /* SmthWentWrongScreenCoordinator.swift in Sources */,
+				C4A3A1EF2A150FB100DFC12A /* QrCropViewController.swift in Sources */,
 				8453A3D82A0A81E300EDB553 /* HomeScreenViewModel.swift in Sources */,
 				845EB9752A160FFF00CA2EFF /* TransactionProvider.swift in Sources */,
 				8453A3A22A0A7EC100EDB553 /* HomeScreenViewController.swift in Sources */,
+				C4A3A1ED2A150F9C00DFC12A /* QrCropCoordinator.swift in Sources */,
 				8407A2A92A127D2A000A3EC4 /* SmthWentWrongScreenViewController.swift in Sources */,
 				8446F3932A0E84FE00F32C7F /* QrScreenCoordinator.swift in Sources */,
 				8407A2A02A127A82000A3EC4 /* QrData.swift in Sources */,
@@ -899,6 +921,8 @@
 				8407A2A52A127D09000A3EC4 /* SmthWentWrongScreenViewModel.swift in Sources */,
 				845EB9772A16121500CA2EFF /* Transaction.swift in Sources */,
 				8482FEC22A1514670031F74B /* Config.swift in Sources */,
+				C4A3A1EB2A150F7D00DFC12A /* QrCropViewModel.swift in Sources */,
+				C4A3A1E92A150F2A00DFC12A /* QrCropModel.swift in Sources */,
 				846BC70B2A12655B0083D844 /* LoaderScreenModel.swift in Sources */,
 				8453A3E32A0A878200EDB553 /* BaseTabBarController.swift in Sources */,
 				8453A3D62A0A812F00EDB553 /* AppCoordinator.swift in Sources */,
