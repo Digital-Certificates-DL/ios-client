@@ -71,6 +71,7 @@ class Secp256k1Manager {
         var signature = secp256k1_ecdsa_recoverable_signature()
         var bytes = base64StringRecoverableSignature.bytes
         var header = bytes[0] & 0xFF
+//        print(header)
         var recId = header - 27
         bytes = Array(bytes[1...64])
         bytes.append(recId)
@@ -116,7 +117,7 @@ class Secp256k1Manager {
         return publicKey
     }
         
-    private func verifySignaturePrivate(
+    private func verifySignature(
         _ signature: secp256k1_ecdsa_signature,
         _ publicKey: secp256k1_pubkey,
         _ messageHash: [UInt8]
@@ -169,17 +170,32 @@ class Secp256k1Manager {
     
     func test3() {
         var context = secp256k1_context_create(UInt32(SECP256K1_CONTEXT_NONE))!
-        var expectedRecoverySignature = Data(base64Encoded: "G1EB37Vx8llI+7T0ZFhXN3h6QE30ah39DSECDfKbLgc0NCedqwHirLlvnTVKYLD1jl4BIbyMXQ0jBGmWuWHFvM8=")!
-        let messageData = "03.04.2023 Daria Hudemchuk Beginner at theoretical aspects blockchain technology".data(using: .utf8)!
-        let hashed = SHA256.hash(data: messageData)
-        let recoverSignature = getRecoverableSignaturePrivate(base64StringRecoverableSignature: expectedRecoverySignature)
-        var publicKey = recoverPublicKeyPrivate(recoverSignature, hashed.bytes)
+        let BITCOIN_SIGNED_MESSAGE_HEADER = "\x18Bitcoin Signed Message:\n"
+//        let BITCOIN_SIGNED_MESSAGE_HEADER_DATA = BITCOIN_SIGNED_MESSAGE_HEADER.data(using: .utf8)!
+        let BITCOIN_SIGNED_MESSAGE_HEADER_BYTES = BITCOIN_SIGNED_MESSAGE_HEADER_DATA.bytes
         
-        var bytes = [UInt8](repeating: 0, count: 65)
+        let messageData = "03.04.2023 Daria Hudemchuk Beginner at theoretical aspects blockchain technology".data(using: .utf8)!
+
+        var messageBytes = [UInt8]()
+        messageBytes.append(UInt8(BITCOIN_SIGNED_MESSAGE_HEADER_BYTES.count))
+        messageBytes.append(contentsOf: BITCOIN_SIGNED_MESSAGE_HEADER_BYTES)
+        messageBytes.append(contentsOf: messageBytes.bytes)
+        
+        
+        
+        var expectedRecoverySignature = Data(base64Encoded: "G1EB37Vx8llI+7T0ZFhXN3h6QE30ah39DSECDfKbLgc0NCedqwHirLlvnTVKYLD1jl4BIbyMXQ0jBGmWuWHFvM8=")!
+//        let messageData = "03.04.2023 Daria Hudemchuk Beginner at theoretical aspects blockchain technology".data(using: .utf8)!
+        let hashed = SHA256.hash(data: messageData)
+        let hashedTwice = SHA256.hash(data: String(bytes: hashed.bytes).data(using: .utf8)!)
+        
+        let recoverSignature = getRecoverableSignaturePrivate(base64StringRecoverableSignature: expectedRecoverySignature)
+        var publicKey = recoverPublicKeyPrivate(recoverSignature, hashedTwice.bytes)
+        
+        var bytes = [UInt8](repeating: 0, count: 33)
         var length = bytes.count
         print("length:", length)
         
-        secp256k1_ec_pubkey_serialize(context, &bytes, &length, &publicKey, UInt32(SECP256K1_EC_UNCOMPRESSED))
+        secp256k1_ec_pubkey_serialize(context, &bytes, &length, &publicKey, UInt32(SECP256K1_EC_COMPRESSED))
         print(String(bytes: bytes))
         secp256k1_context_destroy(context)
 //        print(String(bytes: hashed.bytes))
@@ -263,7 +279,7 @@ class Secp256k1Manager {
 //    byte[] messageBytes = formatMessageForSigning(message);
 //    // Note that the C++ code doesn't actually seem to specify any character encoding. Presumably it's whatever
 //    // JSON-SPIRIT hands back. Assume UTF-8 for now.
-//    Sha256Hash messageHash = Sha256Hash.twiceOf(messageBytes);
+//    Sha256Hash messageHash = "Sha256Hash.twiceOf"(messageBytes);
 //    boolean compressed = false;
 //    if (header >= 31) {
 //        compressed = true;

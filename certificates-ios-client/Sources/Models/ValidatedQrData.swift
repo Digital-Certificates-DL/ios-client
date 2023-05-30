@@ -13,12 +13,14 @@ struct QrDataValidated {
     var signature: String
     var certificatePage: String?
     var certificateIsValid: Bool
+    var date: String
     
     init(
         message: String,
         address: String,
         signature: String,
         certificatePage: String?,
+        date: String,
         certificateIsValid: Bool
     ) {
         self.message = message
@@ -26,13 +28,15 @@ struct QrDataValidated {
         self.signature = signature
         self.certificatePage = certificatePage
         self.certificateIsValid = certificateIsValid
+        self.date = date
     }
     
-    init(qrData: QrData, certificateIsValid: Bool) {
+    init(qrData: QrData, date: String, certificateIsValid: Bool) {
         self.message = qrData.message
         self.address = qrData.address
         self.signature = qrData.signature
         self.certificatePage = qrData.certificatePage
         self.certificateIsValid = certificateIsValid
+        self.date = date
     }
 }

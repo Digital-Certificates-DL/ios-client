@@ -17,6 +17,11 @@ class HomeScreenViewController: UIViewController {
     private let viewModel: HomeScreenViewModelProvider
     private var cancellable = Set<AnyCancellable>()
     
+    deinit {
+        print("home vc deinited")
+    }
+    
+    
     var imagePicker = UIImagePickerController()
     
     private lazy var selectScanOptionLabel: UILabel = {
@@ -130,14 +135,10 @@ extension HomeScreenViewController: UITableViewDelegate, UIImagePickerController
             viewModel.selectUseCameraAction()
         }
         if indexPath.row == 1 && indexPath.section == 0 {
-            
             setPicture()
-            
         }
     }
     
-    
-  
     func setPicture() {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
             imagePicker.delegate = self

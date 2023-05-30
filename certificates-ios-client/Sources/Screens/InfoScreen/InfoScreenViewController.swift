@@ -66,24 +66,56 @@ class InfoScreenViewController: UIViewController {
         viewModel.didLoad()
     }
     
+    init(viewModel: InfoScreenViewModelProvider){
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private func bind() {
         viewModel.infoItemsPublisher.sink { [weak self] items in
             self?.applyItems(items)
         }.store(in: &cancellable)
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.title = "Qr-Code"
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.backgroundColor = .accentPrimary
+
+    }
+    
+    private func deinitTabBar() {
+        navigationController?.navigationBar.tintColor = .accentPrimary
+        navigationController?.navigationBar.backgroundColor = nil
+        navigationController?.navigationBar.topItem?.hidesBackButton = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        
+        navigationController?.navigationBar.topItem?.hidesBackButton = true
+        let backButton = UIBarButtonItem(
+            image: .iconBack.withRenderingMode(.alwaysTemplate),
+            style: .plain,
+            target: self,
+            action: #selector(backButtonTapped)
+        )
+        navigationController?.navigationBar.topItem?.setLeftBarButton(backButton, animated: true)
+        navigationItem.leftBarButtonItem?.imageInsets = UIEdgeInsets(top: 0.0, left: -17.0, bottom: 0.0, right: 0.0)
     }
     
     private func setupUI() {
-        initNavigationBar()
         setupSubviews()
+        setupNavigationBar()
         setupAutoLayout()
     }
         
     private func setupSubviews() {
         view.backgroundColor = .white
-//        navigationController?.delegate = self
         
         view.addSubview(tableView)
         
@@ -97,19 +129,7 @@ class InfoScreenViewController: UIViewController {
         tableView.register(InfoTimeViewCell.self, forCellReuseIdentifier: InfoTimeViewCell.identifier)
         tableView.register(InfoStatusViewCell.self, forCellReuseIdentifier: InfoStatusViewCell.identifier)
     }
-    
-    
-    private func initNavigationBar() {
-//        let backIcon = UIImage(named: "back_button")
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-//        navigationController?.navigationBar.backIndicatorImage = backIcon
-//        navigationController?.navigationBar.backIndicatorTransitionMaskImage = backIcon
-        navigationController?.navigationBar.backItem?.title = "QR-code"
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.backgroundColor = .accentPrimary
         
-    }
-    
     private func setupAutoLayout() {
         tableView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -125,15 +145,11 @@ class InfoScreenViewController: UIViewController {
         dataSource.apply(snapshot)
     }
     
-    
-    init(viewModel: InfoScreenViewModelProvider){
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+    @objc private func backButtonTapped() {
+        viewModel.dismiss()
+        deinitTabBar()
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
 }
 
 extension InfoScreenViewController: UITableViewDelegate {

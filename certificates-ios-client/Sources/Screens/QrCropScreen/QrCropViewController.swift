@@ -12,6 +12,10 @@ class QrCropViewController: CropViewController {
     
     var viewModel: QrCropViewModelProvider? = nil
 
+    
+    deinit {
+        print("its deinited")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +33,7 @@ class QrCropViewController: CropViewController {
     }
     
     
-    public static func getConfig() -> Config{
+    public static func getConfig() -> Mantis.Config {
         var config = Mantis.Config()
         config.presetFixedRatioType = .alwaysUsingOnePresetFixedRatio(ratio: 1.0)
         config.cropViewConfig.showRotationDial = false
@@ -63,9 +67,8 @@ class QrCropViewController: CropViewController {
 extension QrCropViewController : CropViewControllerDelegate{
     func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation, cropInfo: CropInfo) {
         let rawData = parseQr(from: cropped)
-        if(rawData == nil) {
-        }else {
-            viewModel!.parseQr(rawData!)
+        if rawData != nil {
+            viewModel!.sendQrData(rawData!)
         }
         
     }
@@ -74,6 +77,4 @@ extension QrCropViewController : CropViewControllerDelegate{
         cropViewController.dismiss(animated: true, completion: nil)
         viewModel!.dismiss()
     }
-    
-    
 }

@@ -8,6 +8,15 @@
         "revision" : "1a14e189def5eaa92f839afdd2faad8e43b61a6e",
         "version" : "0.12.2"
       }
+    },
+    {
+      "identity" : "varint",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NeoTeo/VarInt.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "0acb7ae289d1f2e1b1878e6b95ad267e867b1182"
+      }
     }
   ],
   "version" : 2

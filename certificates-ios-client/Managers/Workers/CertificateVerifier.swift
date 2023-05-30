@@ -48,21 +48,29 @@ class CertificateVerifier: CertificateVerifierProtocol {
     func validateCertificate(
         _ qrData: QrData
     ) async -> QrDataValidated {
-        var qrDataValidated = QrDataValidated(qrData: qrData, certificateIsValid: false)
+        var qrDataValidated = QrDataValidated(qrData: qrData, date: "", certificateIsValid: false)
         
-//         checkSignature()
+        // checkSignature()
     
         guard let certificate = await certificateProvider.getCertificate(with: qrDataValidated.signature) else {
             return qrDataValidated
         }
         
-        await transactionProvider.provideTransactionWithId(txHash: certificate.txHash)
-        guard let timeStamping = getTimestampingField(transaction: transactionProvider.transaction) else {
+        if certificate.txHash == "–" {
             qrDataValidated.certificateIsValid = true
             return qrDataValidated
         }
         
-        if timeStamping == qrData.message {
+        await transactionProvider.provideTransactionWithId(txHash: certificate.txHash)
+        
+        let timestamp = transactionProvider.transaction?.status.blockTime
+        qrDataValidated.date = getDate(timestamp: timestamp) ?? ""
+
+        guard let timeStamping = getTimestampingField(transaction: transactionProvider.transaction) else {
+            return qrDataValidated
+        }
+
+        if qrData.message.contains(timeStamping) {
             qrDataValidated.certificateIsValid = true
         }
         
@@ -73,13 +81,25 @@ class CertificateVerifier: CertificateVerifierProtocol {
 
 private extension CertificateVerifier {
     
+    
+    func getDate(timestamp: Int?) -> String? {
+        guard let timestamp = timestamp else { return nil }
+        let date = Date(timeIntervalSince1970: Double(timestamp))
+        let dayTimePeriodFormatter = DateFormatter()
+        dayTimePeriodFormatter.dateFormat = "dd.MM.yyyy"
+        let dateString = dayTimePeriodFormatter.string(from: date)
+        return dateString
+    }
+     
     func getTimestampingField(transaction: Transaction?) -> String? {
         let outputs = transaction?.vout
         let opReturn = outputs?.first { output in
             output.scriptPubKeyAddress == nil
         }
         guard let opReturn = opReturn else { return nil }
-        let hexMessage = String(opReturn.scriptPubKey.dropFirst(2))
+        guard var bytes = try? opReturn.scriptPubKey.bytes else { return nil }
+        bytes = Array(bytes.dropFirst(2))
+        let hexMessage = String(bytes: bytes)
         return String(hexString: hexMessage)
     }
     

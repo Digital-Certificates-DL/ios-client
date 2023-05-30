@@ -20,11 +20,38 @@ class QrScreenViewController: UIViewController {
     private let viewModel: QrScreenViewModelProvider
     private var cancellable = Set<AnyCancellable>()
     
-    private lazy var scannerView: UIView = {
+    private lazy var leftDarkView: UIView = {
         let myView = UIView()
-        myView.backgroundColor = .red
-        myView.layer.opacity = 0.5
+        myView.backgroundColor = .black
+        myView.layer.opacity = 0.6
         return myView
+    }()
+    
+    private lazy var topDarkView: UIView = {
+        let myView = UIView()
+        myView.backgroundColor = .black
+        myView.layer.opacity = 0.6
+        return myView
+    }()
+    
+    private lazy var bottomDarkView: UIView = {
+        let myView = UIView()
+        myView.backgroundColor = .black
+        myView.layer.opacity = 0.6
+        return myView
+    }()
+    
+    private lazy var rightDarkView: UIView = {
+        let myView = UIView()
+        myView.backgroundColor = .black
+        myView.layer.opacity = 0.6
+        return myView
+    }()
+    
+    private lazy var scannerView: UIImageView = {
+        let imageVIew = UIImageView()
+
+        return imageVIew
     }()
     
     private lazy var scaleSlider: UISlider = {
@@ -68,11 +95,39 @@ class QrScreenViewController: UIViewController {
     
     func setupAutoLayout() {
         view.addSubview(scannerView)
+        view.addSubview(leftDarkView)
+        view.addSubview(topDarkView)
+        view.addSubview(bottomDarkView)
+        view.addSubview(rightDarkView)
         view.addSubview(scaleSlider)
         
         scannerView.snp.makeConstraints { make in
-            make.size.equalTo(116.0)
+            make.size.equalTo(200.0)
             make.center.equalToSuperview()
+        }
+        
+        leftDarkView.snp.makeConstraints { make in
+            make.leading.top.bottom.equalToSuperview()
+            make.trailing.equalTo(scannerView.snp.leading)
+        }
+        
+        rightDarkView.snp.makeConstraints { make in
+            make.trailing.top.bottom.equalToSuperview()
+            make.leading.equalTo(scannerView.snp.trailing)
+        }
+        
+        topDarkView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalTo(leftDarkView.snp.trailing)
+            make.trailing.equalTo(rightDarkView.snp.leading)
+            make.bottom.equalTo(scannerView.snp.top)
+        }
+        
+        bottomDarkView.snp.makeConstraints { make in
+            make.top.equalTo(scannerView.snp.bottom)
+            make.leading.equalTo(leftDarkView.snp.trailing)
+            make.trailing.equalTo(rightDarkView.snp.leading)
+            make.bottom.equalToSuperview()
         }
         
         scaleSlider.snp.makeConstraints { make in

@@ -57,7 +57,7 @@ class InfoScreenModel: InfoScreenModelProvider{
     
     
     func getAllTimes() -> [InfoScreenTableViewDataSource.Item] {
-        return [Time.itemTime(time: "15.09.2023")]
+        return [Time.itemTime(time: validatedCertificate.date)]
     }
     
     func getStatus() -> [InfoScreenTableViewDataSource.Item] {

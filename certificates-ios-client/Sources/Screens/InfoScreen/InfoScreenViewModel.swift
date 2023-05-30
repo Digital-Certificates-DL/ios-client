@@ -21,12 +21,12 @@ protocol InfoScreenViewModelProvider: AnyObject {
 class InfoScreenViewModel: InfoScreenViewModelProvider {
     var infoItemsPublisher: Published<[InfoScreenTableViewDataSource.Item]>.Publisher { $items }
     @Published private var items: [InfoScreenTableViewDataSource.Item] = []
-    private let pathHandler: (HomeScreenCoordinator.Path) -> Void
+    private let pathHandler: (InfoScreenCoordinator.Path) -> Void
     private let model: InfoScreenModelProvider
     
     init(
         model: InfoScreenModelProvider,
-        pathHandler: @escaping (HomeScreenCoordinator.Path) -> Void
+        pathHandler: @escaping (InfoScreenCoordinator.Path) -> Void
     ){
         self.model = model
         self.pathHandler = pathHandler

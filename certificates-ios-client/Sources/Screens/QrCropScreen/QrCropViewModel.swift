@@ -9,29 +9,61 @@ import Foundation
 
 
 protocol QrCropViewModelProvider: AnyObject {
-    func parseQr(_ qrStringData: String)
+    func sendQrData(_ qrStringData: String) 
     func dismiss()
 }
 
 class QrCropViewModel: QrCropViewModelProvider {
     enum Path {
         case dismiss
-        case parseQr(data: String)
+        case presentLoader
+        case dismissLoaderAndStartSmthWentWrongFlow
+        case dismissLoaderAndStartInfoFlow(QrDataValidated)
     }
     
+    private let certificateVerifier: CertificateVerifierProtocol
     private let pathHandler: (QrCropViewModel.Path) -> Void
     private let model: QrCropModelProvider
     
-    init(model: QrCropModelProvider, pathHandler: @escaping (QrCropViewModel.Path) -> Void) {
+    init(
+        model: QrCropModelProvider,
+        certificateVerifier: CertificateVerifierProtocol,
+        pathHandler: @escaping (QrCropViewModel.Path) -> Void
+    ) {
         self.model = model
+        self.certificateVerifier = certificateVerifier
         self.pathHandler = pathHandler
+    }
+    
+    func sendQrData(_ qrStringData: String) {
+        startLoader()
+        guard let qrData = certificateVerifier.parseQrCode(qrStringData),
+              certificateVerifier.isValidQrCode(qrData) else {
+            startSmthWentWrong()
+            return
+        }
+        
+        Task { [weak self] in
+            let validatedCertificate = await self?.certificateVerifier.validateCertificate(qrData)
+            await MainActor.run {
+                startInfoScreen(validatedCertificate: validatedCertificate!)
+            }
+        }
     }
     
     func dismiss() {
         
     }
     
-    func parseQr(_ qrStringData: String) {
-        pathHandler(.parseQr(data: qrStringData))
+    private func startInfoScreen(validatedCertificate: QrDataValidated) {
+        pathHandler(.dismissLoaderAndStartInfoFlow(validatedCertificate))
+    }
+        
+    private func startLoader() {
+        pathHandler(.presentLoader)
+    }
+    
+    private func startSmthWentWrong() {
+        pathHandler(.dismissLoaderAndStartSmthWentWrongFlow)
     }
 }
