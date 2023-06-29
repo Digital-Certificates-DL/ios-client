@@ -50,8 +50,11 @@ class CertificateVerifier: CertificateVerifierProtocol {
     ) async -> QrDataValidated {
         var qrDataValidated = QrDataValidated(qrData: qrData, date: "", certificateIsValid: false)
         
-        // checkSignature()
-    
+        guard let isVerified = try? Secp256k1Manager().verifySignatureMagic(qrData.message, qrData.signature, qrData.address),
+             isVerified else {
+            return qrDataValidated
+        }
+        
         guard let certificate = await certificateProvider.getCertificate(with: qrDataValidated.signature) else {
             return qrDataValidated
         }

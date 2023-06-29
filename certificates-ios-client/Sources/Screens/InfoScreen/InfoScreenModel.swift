@@ -40,7 +40,7 @@ class InfoScreenModel: InfoScreenModelProvider{
         let message = "message: \n\(validatedCertificate.message)\n\n"
         let address = "address: \n\(validatedCertificate.address)\n\n"
         let signature = "signature: \n\(validatedCertificate.signature)\n\n"
-        let certificatePage = "certificate page: \n\(validatedCertificate.certificatePage)\n\n"
+        let certificatePage = "certificate page: \n\(validatedCertificate.certificatePage ?? "")\n\n"
         return message + address + signature + certificatePage
     }
     

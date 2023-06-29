@@ -263,22 +263,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "135EE89E-E7FD-4CAB-82BE-F0278F8FBA47"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "validateCertificate(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F1E0A3B2-04E9-42F3-AF05-C1C3E82DAD18"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -416,6 +400,51 @@
                   endingLineNumber = "83"
                   offsetFromSymbolStart = "28">
                </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 224e476d295ec139"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "38">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 224e476d295ec139"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "71">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 2888892361de9680"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (certificates_ios_client.SmthWentWrongScreenCoordinator.ExternalPath) -&gt; () in certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "42">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -429,10 +458,42 @@
             filePath = "certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "validateCertificate(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "42B9104C-B589-4D9F-A3BC-05FF4B6D36AE - 753e19d5b7c72e89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "2292">
+               </Location>
+               <Location
+                  uuid = "42B9104C-B589-4D9F-A3BC-05FF4B6D36AE - 753e19d5b7c72eaa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "2115">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -494,6 +555,141 @@
                   startingLineNumber = "48"
                   endingLineNumber = "48"
                   offsetFromSymbolStart = "984">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 329e150e4b028f2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "178">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 9d87c794ff749a32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "50">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 29dae4b4131e6634"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "3013">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 753e19d5b7c72236"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "3504">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 329e150e4b028f2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "186">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 9d87c794ff749a32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "927">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 9d87c794ff749a32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "4334">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 29dae4b4131e6634"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "3055">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 753e19d5b7c72236"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "3584">
                </Location>
             </Locations>
          </BreakpointContent>

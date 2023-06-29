@@ -10,7 +10,7 @@ import Foundation
 extension String {
     
     init?(hexString: String) {
-        var sanitizedString = hexString
+        let sanitizedString = hexString
         var byteArray = [UInt8]()
         var index = sanitizedString.startIndex
         while index < sanitizedString.endIndex {
@@ -21,5 +21,16 @@ extension String {
             index = sanitizedString.index(index, offsetBy: 2)
         }
         self.init(bytes: byteArray, encoding: .utf8)
+    }
+}
+
+extension String {
+    init(utf8DataToHexString data: Data) {
+        var hexString = ""
+        for byte in data.bytes {
+            hexString += String(format:"%02x", byte)
+        }
+        
+        self = hexString
     }
 }

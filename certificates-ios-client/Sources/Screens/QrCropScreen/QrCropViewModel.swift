@@ -43,10 +43,10 @@ class QrCropViewModel: QrCropViewModelProvider {
             return
         }
         
-        Task { [weak self] in
-            let validatedCertificate = await self?.certificateVerifier.validateCertificate(qrData)
+        Task { [unowned self] in
+            let validatedCertificate = await self.certificateVerifier.validateCertificate(qrData)
             await MainActor.run {
-                startInfoScreen(validatedCertificate: validatedCertificate!)
+                self.startInfoScreen(validatedCertificate: validatedCertificate)
             }
         }
     }

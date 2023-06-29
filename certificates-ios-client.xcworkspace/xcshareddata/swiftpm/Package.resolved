@@ -1,6 +1,33 @@
 {
   "pins" : [
     {
+      "identity" : "base58string",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cloutiertyler/Base58String.git",
+      "state" : {
+        "revision" : "496ad09a11f2212643a7413570effc16b7c76506",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "bigint",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/attaswift/BigInt.git",
+      "state" : {
+        "revision" : "018a5925f60f9e0523edd261de394a0898fe95b7",
+        "version" : "3.1.0"
+      }
+    },
+    {
+      "identity" : "ripemd160-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MiclausCorp/ripemd160-Swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "b7fae4fb357ee0cd7ab7f7efc0ccf66b58d49f32"
+      }
+    },
+    {
       "identity" : "secp256k1.swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/GigaBitcoin/secp256k1.swift.git",
@@ -10,12 +37,30 @@
       }
     },
     {
-      "identity" : "varint",
+      "identity" : "secp256k1swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/NeoTeo/VarInt.git",
+      "location" : "https://github.com/LanfordCai/Secp256k1Swift.git",
       "state" : {
-        "branch" : "master",
-        "revision" : "0acb7ae289d1f2e1b1878e6b95ad267e867b1182"
+        "revision" : "260f55ca8b16b40132148454c92afa14e134686a",
+        "version" : "0.1.2"
+      }
+    },
+    {
+      "identity" : "siphash",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/attaswift/SipHash",
+      "state" : {
+        "revision" : "e325083424688055363bbfcb7f1a440d7d7a1bae",
+        "version" : "1.2.2"
+      }
+    },
+    {
+      "identity" : "yamlswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/behrang/YamlSwift.git",
+      "state" : {
+        "revision" : "287f5cab7da0d92eb947b5fd8151b203ae04a9a3",
+        "version" : "3.4.4"
       }
     }
   ],
