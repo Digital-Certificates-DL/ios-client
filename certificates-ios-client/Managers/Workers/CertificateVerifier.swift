@@ -50,7 +50,7 @@ class CertificateVerifier: CertificateVerifierProtocol {
     ) async -> QrDataValidated {
         var qrDataValidated = QrDataValidated(qrData: qrData, date: "", certificateIsValid: false)
         
-        guard let isVerified = try? Secp256k1Manager().verifySignatureMagic(qrData.message, qrData.signature, qrData.address) else {
+        guard let isVerified = try? Secp256k1Manager().verifySignatureMagic(qrData.message, qrData.signature, qrData.address), isVerified else {
             return qrDataValidated
         }
 
@@ -63,9 +63,11 @@ class CertificateVerifier: CertificateVerifierProtocol {
             return qrDataValidated
         }
         
-        await transactionProvider.provideTransactionWithId(txHash: certificate.txHash)
+        guard let transaction = await transactionProvider.provideTransactionWithId(txHash: certificate.txHash) else {
+            return qrDataValidated
+        }
         
-        let timestamp = transactionProvider.transaction?.status.blockTime
+        let timestamp = transaction.status.blockTime
         qrDataValidated.date = getDate(timestamp: timestamp) ?? ""
 
         guard let timeStamping = getTimestampingField(transaction: transactionProvider.transaction) else {
@@ -77,8 +79,6 @@ class CertificateVerifier: CertificateVerifierProtocol {
         }
         return qrDataValidated
     }
-    
-
 }
 
 private extension CertificateVerifier {
@@ -102,10 +102,12 @@ private extension CertificateVerifier {
         let words = scriptPubKeyAsm.split(separator: " ")
         for word in words {
             if Opcode(rawValue: String(word)) == nil {
-                return String(hexString: String(word))
+                if let timeStamping = String(hexString: String(word)), !timeStamping.isEmpty {
+                    return String(hexString: String(word))
+                }
             }
         }
-        return ""
+        return nil
     }
     
     func getDictionaryFromString(_ qrString: String) -> [String: String]? {

@@ -12,8 +12,7 @@ protocol TransactionProviderProtocol: AnyObject {
     var transactionCurrentValueSubject: CurrentValueSubject<Transaction?, Never> { get }
     var transaction: Transaction? { get }
     
-//    func provideTransactionWithId(txHash: String)
-    func provideTransactionWithId(txHash: String) async
+    func provideTransactionWithId(txHash: String) async -> Transaction?
 }
 
 class TransactionProvider: TransactionProviderProtocol {
@@ -28,13 +27,15 @@ class TransactionProvider: TransactionProviderProtocol {
         self.transactionApi = transactionApi
     }
     
-    func provideTransactionWithId(txHash: String) async {
-        guard let transactionData = await transactionApi.getTransactionById(txHash) else { return }
+    func provideTransactionWithId(txHash: String) async -> Transaction? {
+        guard let transactionData = await transactionApi.getTransactionById(txHash) else { return nil }
         do {
             let result = try JSONDecoder().decode(Transaction.self, from: transactionData)
             transactionCurrentValueSubject.send(result)
+            return result
         } catch {
             print(error)
         }
+        return nil
     }
 }
