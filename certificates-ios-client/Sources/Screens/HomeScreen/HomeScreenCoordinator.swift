@@ -17,9 +17,9 @@ class HomeScreenCoordinator: Coordinator {
     
     weak var previousCoordinator: Coordinator?
     var currentCoordinator: Coordinator?
-    var rootNavigationController: UINavigationController
+    var rootNavigationController: NavigationController
     
-    init(rootNavigationController: UINavigationController) {
+    init(rootNavigationController: NavigationController) {
         self.rootNavigationController = rootNavigationController
     }
     

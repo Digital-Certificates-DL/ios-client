@@ -16,12 +16,6 @@ class HomeScreenViewController: UIViewController {
     private typealias DataSource = HomeScreenTableViewDataSource
     private let viewModel: HomeScreenViewModelProvider
     private var cancellable = Set<AnyCancellable>()
-    
-    deinit {
-        print("home vc deinited")
-    }
-    
-    
     var imagePicker = UIImagePickerController()
     
     private lazy var selectScanOptionLabel: UILabel = {
@@ -93,9 +87,7 @@ class HomeScreenViewController: UIViewController {
         view.addSubview(selectScanOptionLabel)
         view.addSubview(youCanScanLabel)
         view.addSubview(tableView)
-                
-        Secp256k1Manager().test3()
-        
+                        
         tableView.alwaysBounceVertical = false
         tableView.separatorStyle = .none
         tableView.dataSource = dataSource
@@ -153,7 +145,5 @@ extension HomeScreenViewController: UITableViewDelegate, UIImagePickerController
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             viewModel.selectUploadImageAction(image: image)
         }
-        
     }
-
 }

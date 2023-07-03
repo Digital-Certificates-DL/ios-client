@@ -16,7 +16,6 @@ class BaseTabBarController: UITabBarController {
         tabBar.clipsToBounds = true
         tabBar.tintColor = .accentPrimary
         tabBar.backgroundColor = .white
-//        tabBar.frame.size.height += 150
     }
     
     override func viewDidAppear(_ animated: Bool) {

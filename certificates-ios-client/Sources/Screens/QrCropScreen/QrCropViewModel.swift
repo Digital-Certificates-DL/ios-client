@@ -6,9 +6,11 @@
 //
 
 import Foundation
-
+import Combine
 
 protocol QrCropViewModelProvider: AnyObject {
+    var startLoader: CurrentValueSubject<Bool, Never> { get }
+    
     func sendQrData(_ qrStringData: String) 
     func dismiss()
 }
@@ -16,11 +18,11 @@ protocol QrCropViewModelProvider: AnyObject {
 class QrCropViewModel: QrCropViewModelProvider {
     enum Path {
         case dismiss
-        case presentLoader
-        case dismissLoaderAndStartSmthWentWrongFlow
-        case dismissLoaderAndStartInfoFlow(QrDataValidated)
+        case startSmthWentWrongFlow
+        case startInfoFlow(QrDataValidated)
     }
     
+    private(set) var startLoader: CurrentValueSubject<Bool, Never> = .init(false)
     private let certificateVerifier: CertificateVerifierProtocol
     private let pathHandler: (QrCropViewModel.Path) -> Void
     private let model: QrCropModelProvider
@@ -36,17 +38,20 @@ class QrCropViewModel: QrCropViewModelProvider {
     }
     
     func sendQrData(_ qrStringData: String) {
-        startLoader()
+        startLoader.send(true)
         guard let qrData = certificateVerifier.parseQrCode(qrStringData),
               certificateVerifier.isValidQrCode(qrData) else {
+            startLoader.send(false)
             startSmthWentWrong()
             return
         }
         
+        startLoader.send(true)
         Task { [unowned self] in
             let validatedCertificate = await self.certificateVerifier.validateCertificate(qrData)
             await MainActor.run {
                 self.startInfoScreen(validatedCertificate: validatedCertificate)
+                self.startLoader.send(false)
             }
         }
     }
@@ -56,14 +61,10 @@ class QrCropViewModel: QrCropViewModelProvider {
     }
     
     private func startInfoScreen(validatedCertificate: QrDataValidated) {
-        pathHandler(.dismissLoaderAndStartInfoFlow(validatedCertificate))
+        pathHandler(.startInfoFlow(validatedCertificate))
     }
-        
-    private func startLoader() {
-        pathHandler(.presentLoader)
-    }
-    
+
     private func startSmthWentWrong() {
-        pathHandler(.dismissLoaderAndStartSmthWentWrongFlow)
+        pathHandler(.startSmthWentWrongFlow)
     }
 }

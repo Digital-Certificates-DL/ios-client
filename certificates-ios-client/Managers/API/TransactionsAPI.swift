@@ -25,7 +25,6 @@ class TransactionsAPI: TransactionsApiProvider {
     
     func getTransactionById(_ txHash: String) async -> Data? {
         await withUnsafeContinuation { continuation in
-            print(configuration.bitcoinScanApiUrl + Endpoints.tx.rawValue + txHash)
             AF.request(configuration.bitcoinScanApiUrl + Endpoints.tx.rawValue + txHash).response { result in
                 switch result.result {
                 case .success(let data):

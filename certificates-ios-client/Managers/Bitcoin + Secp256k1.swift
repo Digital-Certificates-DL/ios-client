@@ -30,12 +30,12 @@ fileprivate enum DecodeSignatureError: Error {
     case invalidSignatureParameter  // recid
 }
 
-enum SegwitType {
+fileprivate enum SegwitType {
     case p2shP2wpkh
     case p2wpkh
 }
 
-struct SignatureData {
+fileprivate struct SignatureData {
     let compressed: Bool
     let segwitType: SegwitType?
     let recovery: Int
@@ -175,6 +175,6 @@ class Secp256k1Manager {
         let message = "03.04.2023 Daria Hudemchuk Beginner at theoretical aspects blockchain technology"
         let signature = "G1EB37Vx8llI+7T0ZFhXN3h6QE30ah39DSECDfKbLgc0NCedqwHirLlvnTVKYLD1jl4BIbyMXQ0jBGmWuWHFvM8="
         let address = "1BooKnbm48Eabw3FdPgTSudt9u4YTWKBvf"
-        print(try! verifySignatureMagic(message, signature, address))
+        print(try! verifySignatureMagic(message, signature, address) == true)
     }
 }

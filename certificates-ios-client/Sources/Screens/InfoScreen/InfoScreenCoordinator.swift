@@ -21,11 +21,11 @@ class InfoScreenCoordinator: Coordinator {
     
     weak var previousCoordinator: Coordinator?
     var currentCoordinator: Coordinator?
-    var rootNavigationController: UINavigationController
+    var rootNavigationController: NavigationController
     private let validatedCertificate: QrDataValidated
     
     init(
-        rootNavigationController: UINavigationController,
+        rootNavigationController: NavigationController,
         validatedCertificate: QrDataValidated
     ) {
         self.rootNavigationController = rootNavigationController

@@ -11,11 +11,11 @@ class QrCropCoordinator: Coordinator {
     var previousCoordinator: Coordinator?
     var currentCoordinator: Coordinator?
     
-    private let rootNavigationController: UINavigationController
+    private let rootNavigationController: NavigationController
     private let selectrdImage: UIImage
     private let serviceManager = ServiceManager.shared
     
-    init(rootNavigationController: UINavigationController, image: UIImage) {
+    init(rootNavigationController: NavigationController, image: UIImage) {
         self.rootNavigationController = rootNavigationController
         selectrdImage = image
     }
@@ -41,38 +41,17 @@ class QrCropCoordinator: Coordinator {
             switch path {
                 case .dismiss:
                     self.dismiss()
-                case .presentLoader:
-                    self.presentLoader()
-                case .dismissLoaderAndStartSmthWentWrongFlow:
-                    self.dismissLoaderAndStartSmthWentWrongFlow()
-                case .dismissLoaderAndStartInfoFlow(let validatedQr):
-                    self.dismissLoaderAndStartInfoFlow(validatedCertificate: validatedQr)
+                case .startSmthWentWrongFlow:
+                    self.startSmthWentWrongFlow()
+                case .startInfoFlow(let validatedQr):
+                    self.startInfoFlow(validatedCertificate: validatedQr)
             }
         }
         let cropViewController: QrCropViewController = Mantis.cropViewController(image: selectrdImage, config: QrCropViewController.getConfig())
         cropViewController.viewModel = viewModel
         rootNavigationController.pushViewController(cropViewController, animated: true)
     }
-    
-    func presentLoader() {
-        let loaderViewController = LoaderScreenViewController()
-        loaderViewController.modalTransitionStyle = .crossDissolve
-        loaderViewController.modalPresentationStyle = .overFullScreen
-        rootNavigationController.present(loaderViewController, animated: true)
-    }
-    
-    func dismissLoaderAndStartSmthWentWrongFlow() {
-        rootNavigationController.dismiss(animated: true) {
-            self.startSmthWentWrongFlow()
-        }
-    }
-    
-    func dismissLoaderAndStartInfoFlow(validatedCertificate: QrDataValidated) {
-        rootNavigationController.dismiss(animated: true) {
-            self.startInfoFlow(validatedCertificate: validatedCertificate)
-        }
-    }
-    
+        
     func startSmthWentWrongFlow() {
         let coordinator = SmthWentWrongScreenCoordinator(rootNavigationController: self.rootNavigationController)
         coordinator.previousCoordinator = self

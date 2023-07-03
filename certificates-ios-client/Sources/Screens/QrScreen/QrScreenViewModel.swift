@@ -11,7 +11,9 @@ import Combine
 
 protocol QrScreenViewModelProvider: AnyObject {
     var needToStartScaning: CurrentValueSubject<Bool, Never> { get }
-
+    var startLoader: CurrentValueSubject<Bool, Never> { get }
+    
+    
     func setNeedToStartScaning(_ bool: Bool)
     func sendQrData(_ qrStringData: String)
     func dismiss()
@@ -22,13 +24,12 @@ class QrScreenViewModel: QrScreenViewModelProvider {
     
     enum Path {
         case dismiss
-        case presentLoader
-        case dismissLoaderAndStartSmthWentWrongFlow
-        case dismissLoaderAndStartInfoFlow(QrDataValidated)
+        case startSmthWentWrong
+        case startInfoFlow(QrDataValidated)
     }
     
     private(set) var needToStartScaning: CurrentValueSubject<Bool, Never> = .init(false)
-    
+    private(set) var startLoader: CurrentValueSubject<Bool, Never> = .init(false)
     private let pathHandler: (QrScreenViewModel.Path) -> Void
     private let model: QrScreenModelProvider
     private let certificateVerifier: CertificateVerifierProtocol
@@ -48,36 +49,34 @@ class QrScreenViewModel: QrScreenViewModelProvider {
     }
     
     func sendQrData(_ qrStringData: String) {
-        startLoader()
+        startLoader.send(true)
         guard let qrData = certificateVerifier.parseQrCode(qrStringData),
               certificateVerifier.isValidQrCode(qrData) else {
+            startLoader.send(false)
             startSmthWentWrong()
             return
         }
         
+        startLoader.send(true)
         Task { [unowned self] in
             let validatedCertificate = await self.certificateVerifier.validateCertificate(qrData)
             await MainActor.run {
                 self.startInfoScreen(validatedCertificate: validatedCertificate)
+                self.startLoader.send(false)
             }
         }
     }
     
     func dismiss() {
-        
+        pathHandler(.dismiss)
     }
     
     private func startInfoScreen(validatedCertificate: QrDataValidated) {
-        pathHandler(.dismissLoaderAndStartInfoFlow(validatedCertificate))
-    }
-        
-    private func startLoader() {
-        pathHandler(.presentLoader)
+        pathHandler(.startInfoFlow(validatedCertificate))
     }
     
     private func startSmthWentWrong() {
-        pathHandler(.dismissLoaderAndStartSmthWentWrongFlow)
+        pathHandler(.startSmthWentWrong)
     }
-
 }
 

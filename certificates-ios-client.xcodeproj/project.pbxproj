@@ -89,6 +89,13 @@
 		84B8F5642A4DDF28000168A9 /* Base58Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8F5632A4DDF28000168A9 /* Base58Decoding.swift */; };
 		84B8F5682A4DDF95000168A9 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8F5672A4DDF95000168A9 /* Data.swift */; };
 		84B8F56A2A4DDFA4000168A9 /* String + PopFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8F5692A4DDFA4000168A9 /* String + PopFirst.swift */; };
+		84B8F56C2A4ECA25000168A9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8F56B2A4ECA25000168A9 /* String.swift */; };
+		84B8F56E2A4ECD65000168A9 /* Opcodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8F56D2A4ECD65000168A9 /* Opcodes.swift */; };
+		84B8F5702A4ED7FC000168A9 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8F56F2A4ED7FC000168A9 /* NavigationController.swift */; };
+		84B8F5732A4EEE85000168A9 /* BottomUpAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8F5722A4EEE85000168A9 /* BottomUpAnimation.swift */; };
+		84B8F5752A4EFDD7000168A9 /* TopBottomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8F5742A4EFDD7000168A9 /* TopBottomAnimation.swift */; };
+		84B8F5772A4EFEF3000168A9 /* EmptyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8F5762A4EFEF3000168A9 /* EmptyAnimation.swift */; };
+		84C2C6582A52C88B00BE317E /* QrCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2C6572A52C88B00BE317E /* QrCodeManager.swift */; };
 		8A2B56234EA1F6F8AFD0EF5F /* Pods_certificates_ios_client_certificates_ios_clientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F219C4A78927C9E7C4D844 /* Pods_certificates_ios_client_certificates_ios_clientUITests.framework */; };
 		A35941A8E566E1595663770B /* Pods_certificates_ios_clientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EBFE39078E07542965A3AC6 /* Pods_certificates_ios_clientTests.framework */; };
 		C4A3A1E12A1380C100DFC12A /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1E02A1380C100DFC12A /* ToastManager.swift */; };
@@ -202,6 +209,13 @@
 		84B8F5632A4DDF28000168A9 /* Base58Decoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base58Decoding.swift; sourceTree = "<group>"; };
 		84B8F5672A4DDF95000168A9 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		84B8F5692A4DDFA4000168A9 /* String + PopFirst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + PopFirst.swift"; sourceTree = "<group>"; };
+		84B8F56B2A4ECA25000168A9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		84B8F56D2A4ECD65000168A9 /* Opcodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opcodes.swift; sourceTree = "<group>"; };
+		84B8F56F2A4ED7FC000168A9 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		84B8F5722A4EEE85000168A9 /* BottomUpAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomUpAnimation.swift; sourceTree = "<group>"; };
+		84B8F5742A4EFDD7000168A9 /* TopBottomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBottomAnimation.swift; sourceTree = "<group>"; };
+		84B8F5762A4EFEF3000168A9 /* EmptyAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAnimation.swift; sourceTree = "<group>"; };
+		84C2C6572A52C88B00BE317E /* QrCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeManager.swift; sourceTree = "<group>"; };
 		9F8B2135ABAABCECDF654B1D /* Pods-certificates-ios-client-certificates-ios-clientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates-ios-client-certificates-ios-clientUITests.release.xcconfig"; path = "Target Support Files/Pods-certificates-ios-client-certificates-ios-clientUITests/Pods-certificates-ios-client-certificates-ios-clientUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B0F219C4A78927C9E7C4D844 /* Pods_certificates_ios_client_certificates_ios_clientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_certificates_ios_client_certificates_ios_clientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A3A1E02A1380C100DFC12A /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
@@ -388,6 +402,7 @@
 				8453A39D2A0A7EC100EDB553 /* AppDelegate.swift */,
 				8453A39F2A0A7EC100EDB553 /* SceneDelegate.swift */,
 				8453A3D52A0A812F00EDB553 /* AppCoordinator.swift */,
+				84B8F56F2A4ED7FC000168A9 /* NavigationController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -428,6 +443,7 @@
 				84B8F5632A4DDF28000168A9 /* Base58Decoding.swift */,
 				84B8F5612A4DDF1C000168A9 /* VarInt.swift */,
 				84B8F55F2A4DDF0F000168A9 /* Bitcoin + Secp256k1.swift */,
+				84C2C6572A52C88B00BE317E /* QrCodeManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -435,6 +451,7 @@
 		8453A3E42A0A967B00EDB553 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				84B8F5712A4EEE6C000168A9 /* Animations */,
 				845EB9782A16154E00CA2EFF /* Providers */,
 				8482FEC32A15209D0031F74B /* Repos */,
 				C4A3A1DF2A1380A600DFC12A /* Utils */,
@@ -456,6 +473,7 @@
 				8482FEC12A1514670031F74B /* Config.swift */,
 				845EB9762A16121500CA2EFF /* Transaction.swift */,
 				84A512F42A1794570013A40E /* ValidatedQrData.swift */,
+				84B8F56D2A4ECD65000168A9 /* Opcodes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -476,6 +494,7 @@
 				84B8F5692A4DDFA4000168A9 /* String + PopFirst.swift */,
 				8402E5ED2A0BD67900EA17A3 /* UITableViewCell + Identifier.swift */,
 				845EB9792A166C1600CA2EFF /* String + hexStringToUtf8.swift */,
+				84B8F56B2A4ECA25000168A9 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -555,6 +574,16 @@
 				845EB97B2A16782500CA2EFF /* CertificateVerifier.swift */,
 			);
 			path = Workers;
+			sourceTree = "<group>";
+		};
+		84B8F5712A4EEE6C000168A9 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				84B8F5722A4EEE85000168A9 /* BottomUpAnimation.swift */,
+				84B8F5742A4EFDD7000168A9 /* TopBottomAnimation.swift */,
+				84B8F5762A4EFEF3000168A9 /* EmptyAnimation.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		9F67131231567A02BF4854F2 /* Pods */ = {
@@ -724,10 +753,10 @@
 			);
 			mainGroup = 8453A3912A0A7EC100EDB553;
 			packageReferences = (
-				84A512FF2A17DDFA0013A40E /* XCRemoteSwiftPackageReference "secp256k1.swift.git" */,
-				84B8F5562A4DDDFA000168A9 /* XCRemoteSwiftPackageReference "Base58String.git" */,
+				84A512FF2A17DDFA0013A40E /* XCRemoteSwiftPackageReference "secp256k1.swift" */,
+				84B8F5562A4DDDFA000168A9 /* XCRemoteSwiftPackageReference "Base58String" */,
 				84B8F5592A4DDE47000168A9 /* XCRemoteSwiftPackageReference "ripemd160-Swift" */,
-				84B8F55C2A4DDE7A000168A9 /* XCRemoteSwiftPackageReference "Secp256k1Swift.git" */,
+				84B8F55C2A4DDE7A000168A9 /* XCRemoteSwiftPackageReference "Secp256k1Swift" */,
 			);
 			productRefGroup = 8453A39B2A0A7EC100EDB553 /* Products */;
 			projectDirPath = "";
@@ -903,9 +932,12 @@
 				C4C6A49D2A123D2B0062C7BE /* InfoTimeViewCell.swift in Sources */,
 				84A512F52A1794570013A40E /* ValidatedQrData.swift in Sources */,
 				8446F3952A0E851300F32C7F /* QrScreenViewController.swift in Sources */,
+				84C2C6582A52C88B00BE317E /* QrCodeManager.swift in Sources */,
 				846BC70D2A1265660083D844 /* LoaderScreenCoordinator.swift in Sources */,
+				84B8F5752A4EFDD7000168A9 /* TopBottomAnimation.swift in Sources */,
 				8453A3D02A0A801F00EDB553 /* Coordinator.swift in Sources */,
 				8407A2A72A127D17000A3EC4 /* SmthWentWrongScreenCoordinator.swift in Sources */,
+				84B8F56E2A4ECD65000168A9 /* Opcodes.swift in Sources */,
 				C4A3A1EF2A150FB100DFC12A /* QrCropViewController.swift in Sources */,
 				84B8F5602A4DDF0F000168A9 /* Bitcoin + Secp256k1.swift in Sources */,
 				8453A3D82A0A81E300EDB553 /* HomeScreenViewModel.swift in Sources */,
@@ -950,18 +982,22 @@
 				845EB9772A16121500CA2EFF /* Transaction.swift in Sources */,
 				8482FEC22A1514670031F74B /* Config.swift in Sources */,
 				C4A3A1EB2A150F7D00DFC12A /* QrCropViewModel.swift in Sources */,
+				84B8F56C2A4ECA25000168A9 /* String.swift in Sources */,
 				C4A3A1E92A150F2A00DFC12A /* QrCropModel.swift in Sources */,
 				846BC70B2A12655B0083D844 /* LoaderScreenModel.swift in Sources */,
 				8453A3E32A0A878200EDB553 /* BaseTabBarController.swift in Sources */,
 				8453A3D62A0A812F00EDB553 /* AppCoordinator.swift in Sources */,
 				C4A3A1E12A1380C100DFC12A /* ToastManager.swift in Sources */,
 				8402E5EC2A0BD61E00EA17A3 /* ActionTableViewCell.swift in Sources */,
+				84B8F5772A4EFEF3000168A9 /* EmptyAnimation.swift in Sources */,
+				84B8F5702A4ED7FC000168A9 /* NavigationController.swift in Sources */,
 				C4D997692A0D1648002A8BFF /* InfoScreenViewController.swift in Sources */,
 				8453A39E2A0A7EC100EDB553 /* AppDelegate.swift in Sources */,
 				C4D9976D2A0D3CAE002A8BFF /* InfoScreenModel.swift in Sources */,
 				84B8F5622A4DDF1C000168A9 /* VarInt.swift in Sources */,
 				8453A3E12A0A869700EDB553 /* TabBarCoordinator.swift in Sources */,
 				8453A3A02A0A7EC100EDB553 /* SceneDelegate.swift in Sources */,
+				84B8F5732A4EEE85000168A9 /* BottomUpAnimation.swift in Sources */,
 				C4D9976F2A0E38BE002A8BFF /* InfoScreenCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1297,7 +1333,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		84A512FF2A17DDFA0013A40E /* XCRemoteSwiftPackageReference "secp256k1.swift.git" */ = {
+		84A512FF2A17DDFA0013A40E /* XCRemoteSwiftPackageReference "secp256k1.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/GigaBitcoin/secp256k1.swift.git";
 			requirement = {
@@ -1305,7 +1341,7 @@
 				version = 0.12.2;
 			};
 		};
-		84B8F5562A4DDDFA000168A9 /* XCRemoteSwiftPackageReference "Base58String.git" */ = {
+		84B8F5562A4DDDFA000168A9 /* XCRemoteSwiftPackageReference "Base58String" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cloutiertyler/Base58String.git";
 			requirement = {
@@ -1321,7 +1357,7 @@
 				kind = branch;
 			};
 		};
-		84B8F55C2A4DDE7A000168A9 /* XCRemoteSwiftPackageReference "Secp256k1Swift.git" */ = {
+		84B8F55C2A4DDE7A000168A9 /* XCRemoteSwiftPackageReference "Secp256k1Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/LanfordCai/Secp256k1Swift.git";
 			requirement = {
@@ -1334,12 +1370,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		84A513002A17DDFA0013A40E /* secp256k1 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84A512FF2A17DDFA0013A40E /* XCRemoteSwiftPackageReference "secp256k1.swift.git" */;
+			package = 84A512FF2A17DDFA0013A40E /* XCRemoteSwiftPackageReference "secp256k1.swift" */;
 			productName = secp256k1;
 		};
 		84B8F5572A4DDDFA000168A9 /* Base58String */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84B8F5562A4DDDFA000168A9 /* XCRemoteSwiftPackageReference "Base58String.git" */;
+			package = 84B8F5562A4DDDFA000168A9 /* XCRemoteSwiftPackageReference "Base58String" */;
 			productName = Base58String;
 		};
 		84B8F55A2A4DDE47000168A9 /* ripemd160-Swift */ = {
@@ -1349,7 +1385,7 @@
 		};
 		84B8F55D2A4DDE7A000168A9 /* Secp256k1Swift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84B8F55C2A4DDE7A000168A9 /* XCRemoteSwiftPackageReference "Secp256k1Swift.git" */;
+			package = 84B8F55C2A4DDE7A000168A9 /* XCRemoteSwiftPackageReference "Secp256k1Swift" */;
 			productName = Secp256k1Swift;
 		};
 /* End XCSwiftPackageProductDependency section */

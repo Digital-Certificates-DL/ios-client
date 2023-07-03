@@ -19,7 +19,7 @@ protocol CertificateVerifierProtocol: AnyObject {
 class CertificateVerifier: CertificateVerifierProtocol {
     let certificateProvider: CertificateProviderProtocol
     let transactionProvider: TransactionProviderProtocol
-    private let requiredKeys = ["message", "address", "signature"]
+    private let requiredKeys = ["message:", "address:", "signature:"]
 
     
     init(certificateProvider: CertificateProviderProtocol, transactionProvider: TransactionProviderProtocol) {
@@ -50,11 +50,10 @@ class CertificateVerifier: CertificateVerifierProtocol {
     ) async -> QrDataValidated {
         var qrDataValidated = QrDataValidated(qrData: qrData, date: "", certificateIsValid: false)
         
-        guard let isVerified = try? Secp256k1Manager().verifySignatureMagic(qrData.message, qrData.signature, qrData.address),
-             isVerified else {
+        guard let isVerified = try? Secp256k1Manager().verifySignatureMagic(qrData.message, qrData.signature, qrData.address) else {
             return qrDataValidated
         }
-        
+
         guard let certificate = await certificateProvider.getCertificate(with: qrDataValidated.signature) else {
             return qrDataValidated
         }
@@ -72,18 +71,17 @@ class CertificateVerifier: CertificateVerifierProtocol {
         guard let timeStamping = getTimestampingField(transaction: transactionProvider.transaction) else {
             return qrDataValidated
         }
-
+        
         if qrData.message.contains(timeStamping) {
             qrDataValidated.certificateIsValid = true
         }
-        
         return qrDataValidated
     }
+    
 
 }
 
 private extension CertificateVerifier {
-    
     
     func getDate(timestamp: Int?) -> String? {
         guard let timestamp = timestamp else { return nil }
@@ -100,13 +98,17 @@ private extension CertificateVerifier {
             output.scriptPubKeyAddress == nil
         }
         guard let opReturn = opReturn else { return nil }
-        guard var bytes = try? opReturn.scriptPubKey.bytes else { return nil }
-        bytes = Array(bytes.dropFirst(2))
-        let hexMessage = String(bytes: bytes)
-        return String(hexString: hexMessage)
+        let scriptPubKeyAsm = opReturn.scriptPubKeyAsm
+        let words = scriptPubKeyAsm.split(separator: " ")
+        for word in words {
+            if Opcode(rawValue: String(word)) == nil {
+                return String(hexString: String(word))
+            }
+        }
+        return ""
     }
     
-    private func getDictionaryFromString(_ qrString: String) -> [String: String]? {
+    func getDictionaryFromString(_ qrString: String) -> [String: String]? {
         var keyValueDictionary: [String: String] = [:]
         for requiredKey in requiredKeys {
             if !qrString.contains(requiredKey) { return nil }
@@ -121,7 +123,7 @@ private extension CertificateVerifier {
         return keyValueDictionary
     }
     
-    private func deleteNewLineAfterKey(_ qrString: String) -> String {
+    func deleteNewLineAfterKey(_ qrString: String) -> String {
         var findColon = false
         var resultString = ""
         var findedTimes = 0

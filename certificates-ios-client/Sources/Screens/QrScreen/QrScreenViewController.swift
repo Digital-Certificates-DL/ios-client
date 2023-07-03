@@ -11,14 +11,10 @@ import SnapKit
 import Combine
 
 class QrScreenViewController: UIViewController {
-    var captureSession: AVCaptureSession!
-    var previewLayer: AVCaptureVideoPreviewLayer!
-    var metadataOutput: AVCaptureMetadataOutput!
-    let sessionQueue = DispatchQueue(label: "sessionQueue", qos: .background)
-
-    
     private let viewModel: QrScreenViewModelProvider
     private var cancellable = Set<AnyCancellable>()
+
+    private lazy var qrCodeScanner = QrCodeScanner(viewController: self)
     
     private lazy var leftDarkView: UIView = {
         let myView = UIView()
@@ -50,8 +46,16 @@ class QrScreenViewController: UIViewController {
     
     private lazy var scannerView: UIImageView = {
         let imageVIew = UIImageView()
-
+        
         return imageVIew
+    }()
+    
+    private lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Back", for: .normal)
+        button.setTitleColor(.accentPrimary, for: .normal)
+        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        return button
     }()
     
     private lazy var scaleSlider: UISlider = {
@@ -75,8 +79,9 @@ class QrScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupQrScanner()
-        startScan()
+        setupQrCodeScanner()
+        setupSlider()
+        setupNavigationBar()
         bind()
         setupAutoLayout()
     }
@@ -87,11 +92,22 @@ class QrScreenViewController: UIViewController {
         startScan()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         stopScan()
     }
-
+    
+    func setupNavigationBar() {
+        navigationItem.leftBarButtonItem = .init(customView: backButton)
+    }
+    
+    func setupQrCodeScanner() {
+        qrCodeScanner.delegate = self
+    }
     
     func setupAutoLayout() {
         view.addSubview(scannerView)
@@ -142,6 +158,14 @@ class QrScreenViewController: UIViewController {
                 self.startScan()
             }
         }.store(in: &cancellable)
+        
+        viewModel.startLoader.sink { start in
+            if start {
+                self.presentLoader()
+            } else {
+                self.dismissLoader()
+            }
+        }.store(in: &cancellable)
     }
     
     private func resetToDefaultAppearance() {
@@ -151,42 +175,35 @@ class QrScreenViewController: UIViewController {
     }
     
     private func startScan() {
-        if captureSession?.isRunning == false {
-            sessionQueue.async {
-                self.captureSession.startRunning()
-            }
-        }
+        qrCodeScanner.startScan()
     }
     
     private func stopScan() {
-        if captureSession?.isRunning == true {
-            sessionQueue.async {
-                self.captureSession.stopRunning()
-            }
-        }
+        qrCodeScanner.stopScan()
     }
     
-    private func setupQrScanner() {
-        captureSession = AVCaptureSession()
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
-        guard let videoInput = try? AVCaptureDeviceInput(device: videoCaptureDevice) else { return }
-        guard captureSession.canAddInput(videoInput) else { return }
-        let videomMaxZoomFactor = videoCaptureDevice.activeFormat.videoMaxZoomFactor
-        scaleSlider.maximumValue = Float(videomMaxZoomFactor)
-        captureSession.addInput(videoInput)
-        metadataOutput = AVCaptureMetadataOutput()
-        guard captureSession.canAddOutput(metadataOutput) else { return }
-        captureSession.addOutput(metadataOutput)
-        metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        metadataOutput.metadataObjectTypes = [.qr]
-        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = view.frame
-        previewLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(previewLayer)
+    private func presentLoader() {
+        let viewController = LoaderScreenViewController()
+        viewController.modalTransitionStyle = .crossDissolve
+        viewController.modalPresentationStyle = .overFullScreen
+        self.present(viewController, animated: true)
     }
+    
+    private func dismissLoader() {
+        self.dismiss(animated: true)
+    }
+    
+    @objc private func backButtonTapped() {
+        viewModel.dismiss()
+    }
+    
+    private func setupSlider() {
+        scaleSlider.maximumValue = 5.0
+    }
+
     
     @objc private func sliderDidChangeValue(slider: UISlider) {
-        guard let input = captureSession.inputs.first as? AVCaptureDeviceInput else { return }
+        guard let input = qrCodeScanner.captureSession.inputs.first as? AVCaptureDeviceInput else { return }
         try? input.device.lockForConfiguration()
         input.device.videoZoomFactor = CGFloat(slider.value)
         input.device.unlockForConfiguration()
@@ -195,14 +212,16 @@ class QrScreenViewController: UIViewController {
 
 extension QrScreenViewController: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        if let metadataObject = metadataObjects.first {
-            guard let metadataObjectRect = previewLayer.transformedMetadataObject(for: metadataObject) else { return }
-            if scannerView.frame.contains(metadataObjectRect.bounds) {
-                guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
-                guard let stringValue = readableObject.stringValue else { return }
-                AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-                viewModel.sendQrData(stringValue)
-                stopScan()
+        DispatchQueue.main.async {
+            if let metadataObject = metadataObjects.first {
+                guard let metadataObjectRect = self.qrCodeScanner.previewLayer.transformedMetadataObject(for: metadataObject) else { return }
+                if self.scannerView.frame.contains(metadataObjectRect.bounds) {
+                    guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
+                    guard let stringValue = readableObject.stringValue else { return }
+                    AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+                    self.stopScan()
+                    self.viewModel.sendQrData(stringValue)
+                }
             }
         }
     }
@@ -214,9 +233,4 @@ extension QrScreenViewController: AVCaptureMetadataOutputObjectsDelegate {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-    
-    
-
 }
-
-

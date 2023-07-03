@@ -13,9 +13,9 @@ class QrScreenCoordinator: Coordinator {
     
     weak var viewModel: QrScreenViewModelProvider?
     private let serviceManager: ServiceManagerProvider
-    private let rootNavigationController: UINavigationController
+    private let rootNavigationController: NavigationController
     
-    init(rootNavigationController: UINavigationController) {
+    init(rootNavigationController: NavigationController) {
         self.rootNavigationController = rootNavigationController
         self.serviceManager = ServiceManager.shared
     }
@@ -44,37 +44,16 @@ class QrScreenCoordinator: Coordinator {
             switch path {
             case .dismiss:
                 self.dismiss()
-            case .presentLoader:
-                self.presentLoader()
-            case .dismissLoaderAndStartSmthWentWrongFlow:
-                self.dismissLoaderAndStartSmthWentWrongFlow()
-            case .dismissLoaderAndStartInfoFlow(let validatedQr):
-                self.dismissLoaderAndStartInfoFlow(validatedCertificate: validatedQr)
+            case .startSmthWentWrong:
+                self.startSmthWentWrongFlow()
+            case .startInfoFlow(let validatedQr):
+                self.startInfoFlow(validatedCertificate: validatedQr)
             }
         }
         
         self.viewModel = viewModel
         let viewController = QrScreenViewController(viewModel: viewModel)
-        rootNavigationController.pushViewController(viewController, animated: true)
-    }
-    
-    func presentLoader() {
-        let loaderViewController = LoaderScreenViewController()
-        loaderViewController.modalTransitionStyle = .crossDissolve
-        loaderViewController.modalPresentationStyle = .overFullScreen
-        rootNavigationController.present(loaderViewController, animated: true)
-    }
-    
-    func dismissLoaderAndStartSmthWentWrongFlow() {
-        rootNavigationController.dismiss(animated: true) {
-            self.startSmthWentWrongFlow()
-        }
-    }
-    
-    func dismissLoaderAndStartInfoFlow(validatedCertificate: QrDataValidated) {
-        rootNavigationController.dismiss(animated: true) {
-            self.startInfoFlow(validatedCertificate: validatedCertificate)
-        }
+        rootNavigationController.pushViewController(viewController, from: .fromTop)
     }
     
     func startSmthWentWrongFlow() {
@@ -97,6 +76,6 @@ class QrScreenCoordinator: Coordinator {
     }
     
     func dismiss() {
-        
+        rootNavigationController.popViewController(from: .fromBottom)
     }
 }

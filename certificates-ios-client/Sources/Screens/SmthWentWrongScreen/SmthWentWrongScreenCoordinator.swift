@@ -21,10 +21,10 @@ class SmthWentWrongScreenCoordinator: Coordinator {
     var previousCoordinator: Coordinator?
     var currentCoordinator: Coordinator?
     
-    private let rootNavigationController: UINavigationController
+    private let rootNavigationController: NavigationController
     private var externalPath: ((ExternalPath) -> Void)?
     
-    init(rootNavigationController: UINavigationController, _ externalPath: ((ExternalPath) -> Void)? = nil) {
+    init(rootNavigationController: NavigationController, _ externalPath: ((ExternalPath) -> Void)? = nil) {
         self.rootNavigationController = rootNavigationController
         self.externalPath = externalPath
     }
@@ -43,7 +43,9 @@ class SmthWentWrongScreenCoordinator: Coordinator {
         let viewController = SmthWentWrongScreenViewController(viewModel: viewModel)
         viewController.modalTransitionStyle = .crossDissolve
         viewController.modalPresentationStyle = .overFullScreen
-        rootNavigationController.present(viewController, animated: true)
+        rootNavigationController.dismiss(animated: true) {
+            self.rootNavigationController.present(viewController, animated: true)
+        }
     }
     
 }
