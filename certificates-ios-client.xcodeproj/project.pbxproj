@@ -1162,7 +1162,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B2FX5YLJ47;
+				DEVELOPMENT_TEAM = T7CLECN442;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "certificates-ios-client/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1191,7 +1191,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B2FX5YLJ47;
+				DEVELOPMENT_TEAM = T7CLECN442;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "certificates-ios-client/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

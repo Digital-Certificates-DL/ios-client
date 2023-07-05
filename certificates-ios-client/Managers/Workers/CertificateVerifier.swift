@@ -49,22 +49,33 @@ class CertificateVerifier: CertificateVerifierProtocol {
         _ qrData: QrData
     ) async -> QrDataValidated {
         var qrDataValidated = QrDataValidated(qrData: qrData, date: "", certificateIsValid: false)
+//        print("1")
         guard let isVerified = try? Secp256k1Manager().verifySignatureMagic(qrData.message, qrData.signature, qrData.address), isVerified else {
             return qrDataValidated
         }
+//        print("2")
         guard let certificate = await certificateProvider.getCertificate(with: qrDataValidated.signature) else {
             return qrDataValidated
         }
+//        print("3")
+//        print(qrData.message)
         if !isMessageInRightFormat(qrData.message) {
             return qrDataValidated
         }
+        
+//        print("4")
         if certificate.txHash == "–" {
             qrDataValidated.certificateIsValid = true
             return qrDataValidated
         }
+        
+//        print("5")
         guard let transaction = await transactionProvider.provideTransactionWithId(txHash: certificate.txHash) else {
             return qrDataValidated
         }
+        
+        
+//        print("6")
         let blockTime = transaction.status.blockTime
         qrDataValidated.date = getDateString(timestamp: blockTime) ?? ""
         
@@ -72,13 +83,20 @@ class CertificateVerifier: CertificateVerifierProtocol {
               let blockTime = transaction.status.blockTime else {
             return qrDataValidated
         }
+        
+//        print("7")
         if !isCertificateDataValid(qrCodeDateString: qrCodeDateString, blockTime: blockTime) {
             return qrDataValidated
         }
+        
+//        print(" 8")
         guard let timeStamping = getTimestampingField(transaction: transaction) else {
             return qrDataValidated
         }
         
+//        print("9")
+//        print(qrData.message)
+//        print(timeStamping)
         if qrData.message.contains(timeStamping) {
             qrDataValidated.certificateIsValid = true
         }
@@ -139,7 +157,7 @@ private extension CertificateVerifier {
 
         if let regex = try? NSRegularExpression(pattern: pattern, options: []) {
             let range = NSRange(location: 0, length: string.count)
-            if let match = regex.firstMatch(in: string, options: [], range: range) {
+            if let _ = regex.firstMatch(in: string, options: [], range: range) {
                 return true
             } else {
                 return false
@@ -171,14 +189,17 @@ private extension CertificateVerifier {
         }
         guard let opReturn = opReturn else { return nil }
         let scriptPubKeyAsm = opReturn.scriptPubKeyAsm
-        let words = scriptPubKeyAsm.split(separator: " ")
-        for word in words {
-            if Opcode(rawValue: String(word)) == nil {
+        let wordsScriptPubKeyAsm = scriptPubKeyAsm.split(separator: " ")
+        let scriptPubKey = opReturn.scriptPubKey
+        for word in wordsScriptPubKeyAsm {
+            if Opcode(rawValue: String(word)) == nil && !word.contains("OP_PUSHBYTES") {
                 if let timeStamping = String(hexString: String(word)), !timeStamping.isEmpty {
                     return String(hexString: String(word))
                 }
             }
         }
+        
+        
         return nil
     }
     

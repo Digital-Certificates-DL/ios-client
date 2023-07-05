@@ -537,6 +537,51 @@
                   endingLineNumber = "62"
                   offsetFromSymbolStart = "28">
                </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - f614dead1b9f9e3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - f614dead1b9f9e3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - fcd210e3531fc97d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (certificates_ios_client.SmthWentWrongScreenCoordinator.ExternalPath) -&gt; () in certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "28">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
