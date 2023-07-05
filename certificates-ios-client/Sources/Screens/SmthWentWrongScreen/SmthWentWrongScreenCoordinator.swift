@@ -14,13 +14,19 @@ class SmthWentWrongScreenCoordinator: Coordinator {
         case dismiss
     }
     
+    enum ExternalPath {
+        case tryAgain
+    }
+    
     var previousCoordinator: Coordinator?
     var currentCoordinator: Coordinator?
     
-    private let rootNavigationController: UINavigationController
+    private let rootNavigationController: NavigationController
+    private var externalPath: ((ExternalPath) -> Void)?
     
-    init(rootNavigationController: UINavigationController) {
+    init(rootNavigationController: NavigationController, _ externalPath: ((ExternalPath) -> Void)? = nil) {
         self.rootNavigationController = rootNavigationController
+        self.externalPath = externalPath
     }
     
     func start() {
@@ -29,6 +35,7 @@ class SmthWentWrongScreenCoordinator: Coordinator {
             switch path {
             case .tryAgain:
                 self.tryAgain()
+                self.externalPath?(.tryAgain)
             case .dismiss:
                 self.dismiss()
             }
@@ -36,7 +43,9 @@ class SmthWentWrongScreenCoordinator: Coordinator {
         let viewController = SmthWentWrongScreenViewController(viewModel: viewModel)
         viewController.modalTransitionStyle = .crossDissolve
         viewController.modalPresentationStyle = .overFullScreen
-        rootNavigationController.present(viewController, animated: true)
+        rootNavigationController.dismiss(animated: true) {
+            self.rootNavigationController.present(viewController, animated: true)
+        }
     }
     
 }

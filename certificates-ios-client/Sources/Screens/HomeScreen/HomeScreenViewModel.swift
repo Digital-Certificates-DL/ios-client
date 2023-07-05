@@ -7,14 +7,14 @@
 
 import Foundation
 import Combine
-
+import UIKit
 
 protocol HomeScreenViewModelProvider: AnyObject {
     var actionsPublisher: Published<[HomeScreenTableViewDataSource.Item]>.Publisher { get }
     
     func didLoad()
     func selectUseCameraAction()
-    func selectUploadImageAction() 
+    func selectUploadImageAction(image: UIImage)
     func dismiss()
 }
 
@@ -40,8 +40,8 @@ class HomeScreenViewModel: HomeScreenViewModelProvider {
         pathHandler(.useCamera)
     }
     
-    func selectUploadImageAction() {
-        pathHandler(.uploadImage)
+    func selectUploadImageAction(image: UIImage) {
+        pathHandler(.uploadImage(image: image))
     }
     
     func dismiss() {

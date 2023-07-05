@@ -10,16 +10,16 @@ import UIKit
 class HomeScreenCoordinator: Coordinator {
     
     enum Path {
-        case uploadImage
+        case uploadImage(image: UIImage)
         case useCamera
         case dismiss
     }
     
     weak var previousCoordinator: Coordinator?
     var currentCoordinator: Coordinator?
-    var rootNavigationController: UINavigationController
+    var rootNavigationController: NavigationController
     
-    init(rootNavigationController: UINavigationController) {
+    init(rootNavigationController: NavigationController) {
         self.rootNavigationController = rootNavigationController
     }
     
@@ -29,8 +29,8 @@ class HomeScreenCoordinator: Coordinator {
             switch path {
             case .useCamera:
                 self.startUseCameraFlow()
-            case .uploadImage:
-                self.startUploadImageFlow()
+            case .uploadImage(let image):
+                self.startUploadImageFlow(image: image)
             case .dismiss:
                 self.dismiss()
             }
@@ -48,8 +48,11 @@ extension HomeScreenCoordinator {
         coordinator.start()
     }
     
-    func startUploadImageFlow() {
-        // TODO
+    func startUploadImageFlow(image: UIImage) {
+        let coordinator = QrCropCoordinator(rootNavigationController: rootNavigationController, image: image)
+        coordinator.previousCoordinator = self
+        currentCoordinator = coordinator
+        coordinator.start()
     }
     
     func dismiss() {

@@ -44,7 +44,7 @@ class TabBarCoordinator: Coordinator {
 
 extension TabBarCoordinator {
     func configureHomeCoordinator() {
-        let homeNavigationController = UINavigationController()
+        let homeNavigationController = NavigationController()
         homeNavigationController.tabBarItem = UITabBarItem(
             title: nil,
             image: .ic_home_active,

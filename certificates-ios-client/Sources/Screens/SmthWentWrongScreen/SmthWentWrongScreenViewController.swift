@@ -40,6 +40,7 @@ class SmthWentWrongScreenViewController: UIViewController {
     lazy var smthWentWrongDescriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .p16InterRegular
+        label.textColor = .black
         label.text = "Unfortunately the application could not scan the QR-code. Make sure your code is correct and try again."
         label.numberOfLines = 0
         return label

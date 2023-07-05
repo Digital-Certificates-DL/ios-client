@@ -11,115 +11,71 @@ class QrScreenCoordinator: Coordinator {
     var previousCoordinator: Coordinator?
     var currentCoordinator: Coordinator?
     
-    private let requiredKeys = ["message", "address", "signature"]
-    private let rootNavigationController: UINavigationController
+    weak var viewModel: QrScreenViewModelProvider?
+    private let serviceManager: ServiceManagerProvider
+    private let rootNavigationController: NavigationController
     
-    
-    init(rootNavigationController: UINavigationController) {
+    init(rootNavigationController: NavigationController) {
         self.rootNavigationController = rootNavigationController
+        self.serviceManager = ServiceManager.shared
     }
     
     func start() {
         let model = QrScreenModel()
-        let viewModel = QrScreenViewModel(model: model) { path in
+        
+        let certificateProvider = CertificateProvider(
+            certificatesRepo: serviceManager.reposManager.certificatesRepo,
+            signature: ""
+        )
+        
+        let transactionProvider = TransactionProvider(
+            transactionApi: serviceManager.apiManager.transactionsAPI
+        )
+        
+        let certificateVerifier = CertificateVerifier(
+            certificateProvider: certificateProvider,
+            transactionProvider: transactionProvider
+        )
+        
+        let viewModel = QrScreenViewModel(
+            model: model,
+            certificateVerifier: certificateVerifier
+        ) { path in
             switch path {
             case .dismiss:
                 self.dismiss()
-            case .parseQr(let qrStringData):
-                self.parseQrStringData(qrStringData)
+            case .startSmthWentWrong:
+                self.startSmthWentWrongFlow()
+            case .startInfoFlow(let validatedQr):
+                self.startInfoFlow(validatedCertificate: validatedQr)
             }
         }
+        
+        self.viewModel = viewModel
         let viewController = QrScreenViewController(viewModel: viewModel)
-        rootNavigationController.pushViewController(viewController, animated: true)
+        rootNavigationController.pushViewController(viewController, from: .fromTop)
     }
-}
-
-private extension QrScreenCoordinator {
-        
+    
+    func startSmthWentWrongFlow() {
+        let coordinator = SmthWentWrongScreenCoordinator(rootNavigationController: self.rootNavigationController) { [unowned self] externalPath in
+            switch externalPath {
+            case .tryAgain:
+                self.viewModel?.setNeedToStartScaning(true)
+            }
+        }
+        coordinator.previousCoordinator = self
+        self.currentCoordinator = coordinator
+        coordinator.start()
+    }
+    
+    func startInfoFlow(validatedCertificate: QrDataValidated) {
+        let coordinator = InfoScreenCoordinator(rootNavigationController: rootNavigationController, validatedCertificate: validatedCertificate)
+        coordinator.previousCoordinator = self
+        self.currentCoordinator = coordinator
+        coordinator.start()
+    }
+    
     func dismiss() {
-        
+        rootNavigationController.popViewController(from: .fromBottom)
     }
-    
-    func parseQrStringData(_ data: String) {
-        presentLoaderScreenViewController()
-        if isQrKeyValueValid(data) {
-            let keyValue = getDictionaryFromString(data)
-            let qrData = QrData(
-                message: keyValue["message"] ?? "",
-                address: keyValue["address"] ?? "",
-                signature: keyValue["signature"] ?? "",
-                certificatePage: keyValue["certificate page"]
-            )
-            
-        } else {
-            rootNavigationController.dismiss(animated: true) {
-                let coordinator = SmthWentWrongScreenCoordinator(rootNavigationController: self.rootNavigationController)
-                coordinator.previousCoordinator = self
-                self.currentCoordinator = coordinator
-                coordinator.start()
-            }
-        }
-    }
-    
-    func presentLoaderScreenViewController() {
-        let loaderViewController = LoaderScreenViewController()
-        loaderViewController.modalTransitionStyle = .crossDissolve
-        loaderViewController.modalPresentationStyle = .overFullScreen
-        rootNavigationController.present(loaderViewController, animated: true)
-    }
-    
-    func isQrKeyValueValid(_ dictionary: [String: String]) -> Bool {
-        var containsAllRequiredKeys = true
-        requiredKeys.forEach { requiredKey in
-            if !dictionary.keys.contains(requiredKey) {
-                containsAllRequiredKeys = false
-            }
-        }
-        return containsAllRequiredKeys && dictionary.keys.count == 4
-    }
-    
-    func isQrKeyValueValid(_ qrString: String) -> Bool {
-        var containsAllRequiredKeys = true
-        requiredKeys.forEach { requiredKey in
-            if !qrString.contains(requiredKey) {
-                containsAllRequiredKeys = false
-            }
-        }
-        return containsAllRequiredKeys
-    }
-    
-    func getDictionaryFromString(_ qrString: String) -> [String: String] {
-        var keyValueDictionary: [String: String] = [:]
-        let formattedString = deleteNewLineAfterKey(qrString)
-        let keyValues = formattedString.split(separator: "\n")
-        for keyValue in keyValues {
-            let key = String(keyValue.split(separator: ":", maxSplits: 1)[0])
-            let value = String(keyValue.split(separator: ":", maxSplits: 1)[1])
-            keyValueDictionary[key] = value
-        }
-        return keyValueDictionary
-    }
-    
-    func deleteNewLineAfterKey(_ qrString: String) -> String {
-        var findColon = false
-        var resultString = ""
-        var findedTimes = 0
-        for character in qrString {
-            if findColon {
-                resultString.append("")
-                findColon = false
-                findedTimes = 0
-                continue
-            }
-            if character == ":" && findedTimes == 0 {
-                findColon = true
-                findedTimes += 1
-            }
-            resultString.append(character)
-        }
-        return resultString
-    }
-    
 }
-
-

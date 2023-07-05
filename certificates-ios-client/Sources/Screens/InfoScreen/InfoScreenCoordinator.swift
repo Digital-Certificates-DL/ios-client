@@ -15,18 +15,30 @@ class InfoScreenCoordinator: Coordinator {
         case dismiss
     }
     
+    deinit {
+        print("deinitedddd")
+    }
+    
     weak var previousCoordinator: Coordinator?
     var currentCoordinator: Coordinator?
-    var rootNavigationController: UINavigationController
+    var rootNavigationController: NavigationController
+    private let validatedCertificate: QrDataValidated
     
-    init(rootNavigationController: UINavigationController) {
+    init(
+        rootNavigationController: NavigationController,
+        validatedCertificate: QrDataValidated
+    ) {
         self.rootNavigationController = rootNavigationController
+        self.validatedCertificate = validatedCertificate
     }
     
     func start() {
-        let model = InfoScreenModel()
-        let viewModel = InfoScreenViewModel(model: model) { [weak self] path in
-            
+        let model = InfoScreenModel(validatedCertificate: validatedCertificate)
+        let viewModel = InfoScreenViewModel(model: model) { path in
+            switch path {
+            case .dismiss:
+                self.dismiss()
+            }
         }
         let viewController = InfoScreenViewController(viewModel: viewModel)
         rootNavigationController.pushViewController(viewController, animated: true)
@@ -34,8 +46,9 @@ class InfoScreenCoordinator: Coordinator {
 }
 
 extension InfoScreenCoordinator {
-   
     func dismiss() {
-        previousCoordinator?.currentCoordinator = nil
+        rootNavigationController.popToRootViewController(animated: true)
+        let homeCoordinator = FindCoordinatorManager.shared.findCoordinatorReverse(self, findCoordinatorType: HomeScreenCoordinator.self)
+        homeCoordinator?.currentCoordinator = nil
     }
 }

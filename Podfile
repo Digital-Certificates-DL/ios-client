@@ -10,6 +10,7 @@ target 'certificates-ios-client' do
   pod 'KeychainSwift', '~> 20.0'
   pod 'UIColor_Hex_Swift', '~> 5.1.9'
   pod 'lottie-ios'
+  pod 'Mantis', '~> 2.9.1'
 
   target 'certificates-ios-clientTests' do
     inherit! :search_paths

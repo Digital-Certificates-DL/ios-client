@@ -19,6 +19,7 @@ class InfoTitleTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = .robotoRegular
         label.textColor = .black
+        label.numberOfLines = 0
         return label
     }()
     

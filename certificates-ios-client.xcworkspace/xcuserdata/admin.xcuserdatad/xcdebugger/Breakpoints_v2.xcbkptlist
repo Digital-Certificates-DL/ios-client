@@ -7,223 +7,303 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5B5E1D6B-9CAD-4BD6-B408-B90817CA3667"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "dataSource"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E9DFB59E-E1FD-4EAC-A365-6F90795339EF"
+            uuid = "B58CD287-DCBA-4C1F-9241-9509D98FF6ED"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewModel.swift"
+            filePath = "certificates-ios-client/Managers/API/TransactionsAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "didLoad()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getTransactionById(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "72CEC17C-1279-4CFC-B606-73559A7815F6"
+            uuid = "57292412-45BE-4BDB-8D54-451D49B7B97D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "HomeScreenViewController"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FAF9698-75D5-4CD0-96C9-D2D2FEC9174C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2CCE2EC2-27DD-470B-9F9F-DC61C60F753D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8D8653A-51CC-4895-8F9C-4D13134C3116"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31FD06FD-FB10-4C12-A42F-1B518A5E6571"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20668D7E-319D-4CAD-B56F-8C93C65F79CB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "827D9938-675B-4699-81BF-C0A8D56608D6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "840C3F26-2964-4473-8C7B-942C1843D353"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D453DAC-53B7-4F75-9976-4E0CD85BDCF3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/secp256k1/Recovery.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9758B2F-774C-4C42-8008-0EF938B7BB3C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "certificates-ios-client/Managers/Secp256k1Manager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "Secp256k1Manager"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "72CEC17C-1279-4CFC-B606-73559A7815F6 - f7dc1af6070bb0ce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "certificates_ios_client.HomeScreenViewController.bind() -&gt; ()"
-                  moduleName = "certificates-ios-client"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/certificates-ios-client/certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  uuid = "72CEC17C-1279-4CFC-B606-73559A7815F6 - e0b53a2d8cff8a02"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;certificates_ios_client.HomeScreenTableViewDataSource.Item&gt;) -&gt; () in certificates_ios_client.HomeScreenViewController.bind() -&gt; ()"
-                  moduleName = "certificates-ios-client"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/certificates-ios-client/certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9D007B0A-0880-42D8-A952-E3A79B14C481"
-            shouldBeEnabled = "No"
+            uuid = "CF8655A6-7DA2-4868-8182-BA0311B19708"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
+            filePath = "certificates-ios-client/Managers/Secp256k1Manager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "HomeScreenViewController"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "Secp256k1Manager"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A1A69F49-49EE-4FDF-8291-D1AF0A2E65E0"
+            uuid = "49DE5E56-B765-422F-B244-F2A38F7330ED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1_swift/Classes/secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "recoverPublicKey(hash:signature:compressed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EBF1DD71-27BF-4E12-AEF7-9325139CAC19"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/secp256k1/Recovery.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38D58A52-C2C2-4DB9-896E-5A06E27AB396"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/secp256k1/Recovery.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "init(_:signature:format:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ECAB2672-0506-44A9-9B9B-F62E0F267643"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/secp256k1.swift/Sources/zkp/SHA256.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "hash(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1E0A3B2-04E9-42F3-AF05-C1C3E82DAD18"
             shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "HomeScreenViewModel"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C8A0B208-F02E-417B-B342-D1652D6C14A6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "didLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AA208531-B5F0-48B6-88CC-FD5148091466"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "dataSource"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B686F207-B318-4085-92D2-17D24A81999D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "dataSource"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F4527D46-6F92-4C68-B894-732C5C2E6D01"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "dataSource"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DA65229E-61F7-434D-970E-558EA977AC02"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/HomeScreen/HomeScreenViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "setupAutoLayout()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D877B745-6403-44AC-A948-523A6A07F85E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/certificates-ios-client-dzkhzrbuxcetcmbtkekagtlvitbn/SourcePackages/checkouts/swift-eosio/Sources/EOSIO/Chain/Signature.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "init(stringValue:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D8FD0521-CBD1-4311-BB41-D23397D05CD3"
-            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "QrScreenViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D8FBD1B-20D2-4D9C-A31D-DFCE27D77FA0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D73B412-78E4-43DD-9A47-6F824495A2D6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -231,112 +311,944 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B6D2E91F-F15D-444E-BAD0-08F629BA7E75"
-            shouldBeEnabled = "Yes"
+            uuid = "879A1B60-35FD-4040-AD44-143785518C3A"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "sliderDidChangeValue(slider:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4D4D0940-2359-4570-B219-88D2A582BC70"
+            uuid = "17D0E371-2091-44BB-B9EB-A98EFDF1FB85"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "bind()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "17D0E371-2091-44BB-B9EB-A98EFDF1FB85 - 166cad43030df8e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.bind() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  uuid = "17D0E371-2091-44BB-B9EB-A98EFDF1FB85 - 166cad43030df8e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.bind() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "getDictionaryFromString(_:)"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "startSmthWentWrongFlow()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 2888892361de963d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (certificates_ios_client.SmthWentWrongScreenCoordinator.ExternalPath) -&gt; () in certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 224e476d295ec118"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 224e476d295ec118"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 2888892361de965e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (certificates_ios_client.SmthWentWrongScreenCoordinator.ExternalPath) -&gt; () in certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 224e476d295ec28d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 224e476d295ec28d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 2888892361de95cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (certificates_ios_client.SmthWentWrongScreenCoordinator.ExternalPath) -&gt; () in certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 224e476d295ec26c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 224e476d295ec26c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - 2888892361de95aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (certificates_ios_client.SmthWentWrongScreenCoordinator.ExternalPath) -&gt; () in certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - f614dead1b9f9e3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - f614dead1b9f9e3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "AF569BFE-4CC7-4BD2-A292-B0D57E12A6A3 - fcd210e3531fc97d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (certificates_ios_client.SmthWentWrongScreenCoordinator.ExternalPath) -&gt; () in certificates_ios_client.QrScreenCoordinator.startSmthWentWrongFlow() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "validateCertificate(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - e4d01298653cecca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/certificates-ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - ff94e3223d2005d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/certificates-ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "760">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - a3701e4399f941d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/certificates-ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "984">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 329e150e4b028f2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "178">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 9d87c794ff749a32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "50">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 29dae4b4131e6634"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "3013">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 753e19d5b7c72236"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "3504">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 329e150e4b028f2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "186">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 9d87c794ff749a32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "927">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 9d87c794ff749a32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "4334">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 29dae4b4131e6634"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "3055">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 753e19d5b7c72236"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "3584">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 329e150e4b028f2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 9d87c794ff749a32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 9d87c794ff749a32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "2212">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 29dae4b4131e6634"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1464">
+               </Location>
+               <Location
+                  uuid = "B87D8FFD-3D22-41A9-9A2F-8D5CC8E13E22 - 753e19d5b7c72236"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for certificates_ios_client.CertificateVerifier.validateCertificate(certificates_ios_client.QrData) async -&gt; certificates_ios_client.QrDataValidated"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Managers/Workers/CertificateVerifier.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1980">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACF1F260-934E-4D96-80FC-C5519E314229"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "certificates-ios-client/Managers/Bitcoin + Secp256k1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "verifySignature(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0D5A9C05-AC70-4E04-8BE5-AC1D13AA0C3B"
+            uuid = "42DBFBDB-4B6C-4539-96D5-86BFCF3CA75C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "startSmthWentWrong()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F773C5A6-1E08-437C-AD65-5AF28C638276"
             shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "certificates-ios-client/Sources/Animations/BottomUpAnimationPresent.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "animateTransition(using:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F773C5A6-1E08-437C-AD65-5AF28C638276 - 49b83927cc8d6abf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.BottomUpAnimationPresent.animateTransition(using: __C.UIViewControllerContextTransitioning) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Animations/BottomUpAnimationPresent.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "F773C5A6-1E08-437C-AD65-5AF28C638276 - 49b83927cc8d6a9e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.BottomUpAnimationPresent.animateTransition(using: __C.UIViewControllerContextTransitioning) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Animations/BottomUpAnimationPresent.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E81A3397-A099-4FA8-B644-B1BE92AB89C6"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "parseQrStringData(_:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "start()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E81A3397-A099-4FA8-B644-B1BE92AB89C6 - bc6fd3c58665f7d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.start() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "E81A3397-A099-4FA8-B644-B1BE92AB89C6 - bc6fd3c58665f7d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenCoordinator.start() -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CBB599AB-CE0F-4DF7-9A93-D1FCD31ADAF2"
-            shouldBeEnabled = "Yes"
+            uuid = "27C1B884-887C-4C80-975B-488A163D68D0"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "isQrKeyValueValid(_:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A7591911-738C-4E0C-81D2-015DAD657250"
-            shouldBeEnabled = "Yes"
+            uuid = "768E0B3B-32F7-42B9-BC07-105999D469D8"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenCoordinator.swift"
+            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
-            landmarkName = "getDictionaryFromString(_:)"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "768E0B3B-32F7-42B9-BC07-105999D469D8 - 7d970e72e9020592"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "768E0B3B-32F7-42B9-BC07-105999D469D8 - 7d970e72e9020592"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "768E0B3B-32F7-42B9-BC07-105999D469D8 - 7d970e72e9020592"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "768E0B3B-32F7-42B9-BC07-105999D469D8 - 7d970e72e902029a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DEC84B8D-E7A6-4007-B836-BBB5D65AA094"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "certificates-ios-client/Sources/Screens/SmthWentWrongScreen/SmthWentWrongScreenCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "tryAgain()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1D189467-02DF-49B6-8E66-B503CDE4B86E"
-            shouldBeEnabled = "Yes"
+            uuid = "53B65D31-D14F-48FF-A1E7-BB765243D162"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "53B65D31-D14F-48FF-A1E7-BB765243D162 - 7d970e72e9020592"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "53B65D31-D14F-48FF-A1E7-BB765243D162 - 7d970e72e9020592"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "53B65D31-D14F-48FF-A1E7-BB765243D162 - 7d970e72e9020592"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "53B65D31-D14F-48FF-A1E7-BB765243D162 - 7d970e72e902029a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A46FBF21-23D9-46E8-A8AC-A8BF88E2A0DF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A46FBF21-23D9-46E8-A8AC-A8BF88E2A0DF - 7d970e72e9020273"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "A46FBF21-23D9-46E8-A8AC-A8BF88E2A0DF - 7d970e72e9020273"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "A46FBF21-23D9-46E8-A8AC-A8BF88E2A0DF - 7d970e72e9020273"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "A46FBF21-23D9-46E8-A8AC-A8BF88E2A0DF - 7d970e72e902037b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "certificates_ios_client.QrScreenViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "certificates-ios-client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/myCertificates/ios-client/certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "10F5B050-361C-4676-8E05-1289AA685A2B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "certificates-ios-client/Sources/Screens/QrScreen/QrScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "sendQrData(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
